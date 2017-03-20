@@ -171,7 +171,7 @@ $(function (){
                         transform:"rotate(0)"
                     });
                     footflag=true;
-                }console.log(footflag);
+                }
             }
         })
     })
