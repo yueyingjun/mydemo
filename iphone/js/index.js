@@ -23,10 +23,15 @@ $(function(){
     var next=0;
     var times=2000;
     var nowtime=0;
+    var flag2=true;
     var t=setInterval(move,times);
     function move(type){
         var type=type||"right";
         if(type=="right"){
+            if(flag2==false){
+                return;
+            }
+            flag2=false;
             next=now+1;
             if(next>$(".banner .lunbo").length-1){
                 next=0;
@@ -36,9 +41,14 @@ $(function(){
                 $(".banner .lunbo").eq(now).css("left","100%")
             }).css("z-index",0);
             $(".banner .lunbo").eq(next).css("z-index",1).animate({left:0},500,function(){
+                flag2=true;
                 now=next;
             })
         }else if(type=="left"){
+            if(flag2==false){
+                return;
+            }
+            flag2=false;
             next=now-1;
             if(next==-1){
                 next=$(".banner .lunbo").length-1;
@@ -47,6 +57,7 @@ $(function(){
             $(".banner .lunbo").eq(now).animate({left:"100%"},500).css("z-index",1);
             $(".banner .lunbo").eq(next).css({left:0,width:"100%",height:"100%"}).animate({width:"110%",height:"110%"},500,function(){
                 now=next;
+                flag2=true;
             }).css("z-index",0);
         }
         $(".progress").eq(now).css("width",0);
