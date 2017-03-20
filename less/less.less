@@ -1,131 +1,67 @@
-@cols:12;
-@num1:1200px;
-@num2:900px;
-*{
-  box-sizing: border-box;
+@color:pink;
+//div{
+//  color: @color;
+//  background: #000;
+//}
+/*less
+  作用：把less转化为css;
+
+  css编程思想过程化 ->css3模块化方式进行升级;
+
+  为什么要加前缀
+  1.表示先进性
+  2.表示并不同用，算法优秀，测试版本
+
+  渐进增强：先匹配普通的
+  优雅降级：先匹配常用的
+
+
+  1.变量
+  2.函数
+  3.条件
+  4.循环
+  5 &
+
+  6.一个less里面引用另一个less   @import "var.less"
+  解决浮动带来的影响
+*/
+.radius(@num,@num,@num,@num){
+  -webkit-border-radius:@arguments;
+  -moz-border-radius:@arguments;
+  -o-border-radius:@arguments;
+  -ms-border-radius:@arguments;
+  border-radius:@arguments;
 }
-/*相应小屏*/
-.container{
-  &-fluid{
-     width:100%;margin:auto;
-    .clear();
-  }
-  &-fluid>.row{
-    width:100%;
-    .clear();
-  }
-
-  &{
-    width:600px;margin:auto;
-    .clear();
-  }
-  &>.row{
-    width:100%;
-    .clear();
-  }
-
+.shadow(@type,@x:0,@y:0,@b:5px,@c:#000) when (@type=outset){
+  -webkit-box-shadow: @x @y @b @c;
+  -moz-box-shadow: @x @y @b @c;
+  -ms-box-shadow: @x @y @b @c;
+  -o-box-shadow: @x @y @b @c;
+  box-shadow: @x @y @b @c;
 }
-.for(s);
-.col-l-hide{
-  display: block;
+.shadow(@type,@x:0,@y:0,@b:15px,@c:#000) when (@type=inset){
+  -webkit-box-shadow: @x @y @b @c @type;
+  -moz-box-shadow: @x @y @b @c @type;
+  -ms-box-shadow: @x @y @b @c @type;
+  -o-box-shadow: @x @y @b @c @type;
+  box-shadow: @x @y @b @c @type;
 }
-.col-m-hide{
-  display: block;
+.each(@i:1) when (@i<=12){
+  div@{i}{
+    width: @i/12*100%;
+  }
+  .each(@i:@i+1);
 }
-.col-s-hide{
-  display: none;
+.each(1);
+.one{
+  width: 100px;
+  height: 100px;
+  //.radius(10px,10px,10px,10px);
+  border: 1px solid @color;
+  //.shadow(inset);
+  border-image-source: url(../11.jpg);
+  border-image-width: 10px;
+  border-image-slice: 33.33% 33.33% 33.33% 33.33%;
+  border-image-repeat:round;
+  border-image-outset: 0px;
 }
-
-/*中屏*/
-
-@media screen and (min-width: @num2){
-  .container{
-    width:@num2;
-  }
-  .for(m);
-
-  .col-s-hide{
-    display: block;
-  }
-  .col-l-hide{
-    display: block;
-  }
-  .col-m-hide{
-    display: none;
-  }
-
-}
-
-/*大屏*/
-
-@media screen and (min-width: @num1){
-  .for(l);
-  .container{
-    width:@num1;
-  }
-  .col-s-hide{
-    display: block;
-  }
-  .col-m-hide{
-    display: block;
-  }
-  .col-l-hide{
-    display: none;
-  }
-
-}
-
-
-
-.for(@type,@i:1) when (@i<=@cols){
-
-  .container>.row>.col-@{type}-@{i}{
-    width:@i/@cols*100%;
-    float:left;position: relative;
-  }
-
-  .container>.row>.col-@{type}-offset-@{i}{
-      margin-left:@i/@cols*100%;
-  }
-
-  .container>.row>.col-@{type}-push-@{i}{
-    left:@i/@cols*100%;
-  }
-  .container>.row>.col-@{type}-pull-@{i}{
-    left:-@i/@cols*100%;
-  }
-
-
-  .container-fluid>.row>.col-@{type}-@{i}{
-    width:@i/@cols*100%;
-    float:left;position: relative;
-  }
-  .for(@type,@i+1);
-}
-
-
-
-
-.clear(){
-  & {
-    &:before, &:after {
-      content: "";
-      display: none;
-      clear: both;
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

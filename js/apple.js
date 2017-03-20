@@ -1,182 +1,178 @@
-$(function(){
+$(function (){
+    //导航栏
+    var hh=$(window).height();
+    var ww=$(window).width();
+    $(".opt").css("height",hh);
     var flag=true;
-    window.onresize=function() {
-        var clientH = $(window).height();
-        var clientW = $(window).width();
-        $(".menu").css("height", clientH);
-        if(clientW>765){
-            $(".menu").css("display","none");
+    $(window).resize(function () {
+        hh=$(window).height();
+        ww=$(window).width();
+        $(".opt").css("height", hh);
+        if(ww>765) {
             flag=true;
-            $(".line1").css({
-                transform:"translate(0,0px) rotate(0deg)"
-            })
-            $(".line2").css({
-                transform:"translate(0,0px) rotate(0deg)"
-            })
+            $(".menu").find(".line1").css({
+                transform: "translate(0,0) rotate(0)"
+            });
+            $(".menu").find(".line2").css({
+                transform: "translate(0,0) rotate(0)"
+            });
+            $(".opt").css("display", "none");
+            $(".footer").find("ul").css("display","block");
+            $(".footer").find("ul.jia").css("display","none");
+            $(".footer").find("ul.jia").css({
+                transform:"rotate(0)"
+            });
         }
-    }
-    window.onresize();
-
-
-    $(".small .con .btn").click(function(){
-            if(flag){
-                $(".line1").css({
-                    transform:"translate(0,5px) rotate(45deg)"
-                })
-                $(".line2").css({
-                    transform:"translate(0,-3px) rotate(-45deg)"
-                })
-
-                flag=false
-
-            }else{
-                $(".line1").css({
-                    transform:"translate(0,0px) rotate(0deg)"
-                })
-                $(".line2").css({
-                    transform:"translate(0,0px) rotate(0deg)"
-                })
-
-                flag=true
-            }
-
-
-            $(".menu").slideToggle(1000);
+        else{
+            $(".footer").find("ul.jia").css("display","block");
+            $(".footer").find("ul:not('.jia')").css("display","none");
+        }
+    });
+    $(".menu").click(function () {
+        if(flag){
+            flag=false;
+            $(this).find(".line1").css({
+                transform:"translate(0,5px) rotate(45deg)"
+            });
+            $(this).find(".line2").css({
+                transform:"translate(0,-5px) rotate(-45deg)"
+            });
+            $(".opt").slideToggle();
+        }
+        else{
+            flag=true;
+            $(this).find(".line1").css({
+                transform:"translate(0,0) rotate(0)"
+            });
+            $(this).find(".line2").css({
+                transform:"translate(0,0) rotate(0)"
+            });
+            $(".opt").slideToggle();
+        }
     })
-
-// 轮播图
-
-    var times=3000;
-    var currentNum=0;
-    var nextNum=0;
-
-    var currentTime=0;
-
-    var flag=true;
+    //banner轮播
     var t1,t2;
-    //自动轮播
-    t1=setInterval(auto,times)
-    function auto(){
-        nextNum++;
-        if(nextNum>$(".wheel-list").length-1){
-            nextNum=0;
-
+    var btime=3000;
+    var curNum=0;
+    var nextNum=0;
+    var prostart=100;
+    var flag1=true;
+    var flagb=true;
+    t1=setInterval(move,btime);
+    function move(type) {
+        if(!flagb){
+            return;
         }
-
-       //当前这一张
-
-        $(".wheel-list").eq(currentNum).animate({
-            width:"80%",height:"80%"
-        })
-
-       //下一张的运动方式
-       $(".wheel-list").eq(nextNum).animate({
-           left:0
-       },function(){
-           $(".wheel-list").eq(currentNum).css({
-               width:"100%",height:"100%",left:"100%"
-           })
-           if(nextNum==0){
-               flag=false;
-           }
-
-           currentNum=nextNum;
-           currentTime=0;
-
-       }).css("zIndex",1);
-
+        flagb=false;
+        var type=type||"right";
+        if(type=="right"){
+            nextNum=curNum+1;
+            if(nextNum>$(".banner .img li").size()-1){
+                nextNum=0;
+            }
+            $(".banner .img li").eq(curNum).css("zIndex","0").animate({"height":"100%","left":"-10%"});
+            $(".banner .img li").eq(nextNum).css("zIndex","1").animate({"left":"0"},600,function () {
+                $(".banner .img li").eq(curNum).css({"height":"110%","left":"100%"});
+                curNum=nextNum;
+                prostart=100;
+                if(curNum==0){
+                    flag1=false;
+                }
+                flagb=true;
+            });
+        }else if(type=="left"){
+            nextNum=curNum-1;
+            if(nextNum<0){
+                nextNum=$(".banner .img li").size()-1;
+            }
+            $(".banner .img li").eq(curNum).css("zIndex","1").animate({"left":"100%"});
+            $(".banner .img li").eq(nextNum).css({"zIndex":"0","height":"100%","left":"-10%"}).animate({"left":"0","height":"110%"},function (){
+                $(".banner .img li").eq(curNum).css({"zIndex":"0","height":"110%"});
+                curNum=nextNum;
+                flagb=true;
+            })
+        }
     }
-
-    //按钮的进度条
-
-    t2=setInterval(progress,50);
-
-    function progress(){
-        currentTime+=50;
-        var bili=currentTime/times;
+    //进度条
+    var bili;
+    t2=setInterval(movepro,50)
+    function movepro() {
+        prostart+=50;
+        bili=prostart/btime;
         if(bili>1){
             bili=1;
         }
-        $(".progress").eq(currentNum).css("width",bili*100+"%");
-
-
-        if(!flag){
-            $(".progress").css("width",0);
-            flag=true;
+        $(".banner .btns li .progress").eq(curNum).css("width",bili*100+"%");
+        if(!flag1){
+            flag1=true;
+            $(".banner .btns li .progress").css("width",0);
         }
-
     }
 
-
-    //点击按钮操作轮播图
-
-
-    $(".btns .btn").click(function(){
-        var index=$(this).index(".btns .btn");
-        nextNum=index;
-        stop();
-    })
-
-    function stop(){
+    //小按钮
+    $(".banner .btns li").click(function () {
+        var index=$(this).index();
         clearInterval(t1);
         clearInterval(t2);
+        $(".banner .btns li .progress").css("width","0").eq(index).css("width","100%");
+        if(index>curNum){
+            $(".banner .img li").eq(curNum).css("zIndex","0").animate({"height":"100%","left":"-10%"});
+            $(".banner .img li").eq(index).css("zIndex","1").animate({"left":"0"},function () {
+                $(".banner .img li").eq(curNum).css({"height": "110%", "left": "100%"});
+                curNum=index;
+            });
+        }else if(index<curNum){
+            $(".banner .img li").eq(curNum).css("zIndex","1").animate({"left":"100%"});
+            $(".banner .img li").eq(index).css({"zIndex":"0","height":"100%","left":"-10%"}).animate({"left":"0","height":"110%"},function () {
+                curNum=index;
+                $(".banner .img li").eq(curNum).css("zIndex","1").animate({"height":"110%"});
+            });
+        }
 
-        $(".btns .btn .progress").css("width",0).eq(nextNum).css("width","100%");
-
-        if(currentNum<nextNum){
-            //当前这一张
-
-            $(".wheel-list").eq(currentNum).animate({
-                width:"80%",height:"80%"
-            })
-
-            //下一张的运动方式
-            $(".wheel-list").eq(nextNum).animate({
-                left:0
-            },function(){
-                $(".wheel-list").eq(currentNum).css({
-                    width:"100%",height:"100%",left:"100%"
-                })
-                if(nextNum==0){
-                    flag=false;
+    });
+    //左右按钮
+    $(".banner .leftBtn li").click(function () {
+        clearInterval(t1);
+        clearInterval(t2);
+        move("left");
+        $(".banner .btns li .progress").css("width","0").eq(nextNum).css("width","100%");
+    })
+    $(".banner .rightBtn li").click(function () {
+        clearInterval(t1);
+        clearInterval(t2);
+        move();
+        $(".banner .btns li .progress").css("width","0").eq(nextNum).css("width","100%");
+    })
+    //bug
+    // window.onblur=function (){
+    //     clearInterval(t1);
+    //     clearInterval(t2);
+    //     prostart=0;
+    // }
+    // window.onfocus=function () {
+    //     t1=setInterval(move,btime);
+    //     t2=setInterval(movepro,50);
+    // }
+    //底部的点开效果
+    $(".footer .one").each(function () {
+        var footflag=true;
+        $(this).click(function () {
+            if(ww<=765){
+                // event.stopPropagation();
+                $(this).find("ul:not('.jia')").slideToggle();
+                if(footflag){
+                    $(this).find("ul.jia").css({
+                        transform:"rotate(45deg)"
+                    });
+                    footflag=false;
                 }
-
-                currentNum=nextNum;
-                currentTime=0;
-
-            }).css("zIndex",1);
-        }else{
-
-           $(".wheel-list").eq(currentNum).animate({left:"100%"}).css("z-index",1);
-
-            $(".wheel-list").eq(nextNum).css({
-                left:0,top:0,width:"80%",height:"80%"
-            }).animate({width:"100%",height:"100%"},function(){
-                currentNum=nextNum;
-            })
-
-
-        }
-
-    }
-
-
-    $(".leftBtn").click(function(){
-        nextNum--
-        if(nextNum==-1){
-            nextNum=$(".wheel-list").length-1;
-        }
-        stop();
+                else{
+                    $(this).find("ul.jia").css({
+                        transform:"rotate(0)"
+                    });
+                    footflag=true;
+                }
+            }
+        })
     })
-
-    $(".rightBtn").click(function(){
-        nextNum++
-        if(nextNum>$(".wheel-list").length-1){
-            nextNum=0;
-        }
-        stop();
-    })
-
-
-
-})
+});

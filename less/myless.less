@@ -1,0 +1,103 @@
+@cols:12;
+@num1:1080px;
+@num2:735px;
+
+.container{
+  &-fluid{
+    width: 100%;
+    .clear();
+  }
+  &{
+    width:100%;
+    .clear();
+  }
+  &>.rows{
+    width: 100%;
+    .clear();
+  }
+  &-fluid>.rows{
+    width: 100%;
+    .clear();
+  }
+}
+//小屏
+.for(s);
+.col-m-hide{
+   display: block;
+ }
+.col-l-hide{
+  display: block;
+}
+.col-s-hide{
+  display: none;
+}
+@media screen and (min-width:@num2 ){
+  .container{
+    width: 100%;
+  }
+  //中屏
+  .for(m);
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+}
+@media screen and (min-width:@num1 ){
+  //大屏
+  .container{
+    width: 1000px;
+  }
+  .for(l);
+  .col-s-hide{
+     display: block;
+   }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+}
+.clear(){
+  &{
+    &:before,&:after{
+      content: "";
+      display: none;
+      clear: both;
+    }
+  }
+}
+.for(@type,@i:1) when (@i<=@cols){
+  .container>.rows>.col-@{type}-@{i} {
+    width: @i/@cols*100%;
+    float: left;position: relative;
+  }
+  .container>.rows>.col-@{type}-offset-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container>.rows>.col-@{type}-push-@{i}{
+    left:@i/@cols*100%;
+  }
+  .container>.rows>.col-@{type}-pull-@{i}{
+    left:-@i/@cols*100%;
+  }
+  .container-fluid>.rows>.col-@{type}-@{i} {
+    width: @i/@cols*100%;
+    float: left;
+  }
+  .container-fluid>.rows>.col-@{type}-offset-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container-fluid>.rows>.col-@{type}-push-@{i}{
+    left:@i/@cols*100%;
+  }
+  .container-fluid>.rows>.col-@{type}-pull-@{i}{
+    left:-@i/@cols*100%;
+  }
+  .for(@type,@i:@i+1);
+}
