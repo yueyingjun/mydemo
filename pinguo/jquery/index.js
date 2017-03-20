@@ -123,8 +123,6 @@ $(function() {
         }
         $(".circle .tiao").css("width",0).eq($(this).index()).css("width","100%");
     })
-
-
 // 底部点击
     $(".footsmall .bt-r").each(function(index){
         $(".footsmall .bt-r").eq(index).click(function(){

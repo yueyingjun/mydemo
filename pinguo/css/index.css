@@ -306,20 +306,20 @@ body{
 .pics li:nth-child(1){
     background-position: center center;
     background-image: url("../images/banner1-small.jpg");
-    background-size:auto 100%;
+    background-size:contain;
     background-repeat: no-repeat;
     background-color: #0a0a0a;
     left: 0;
 }
 .pics li:nth-child(2){
-    background-position: center -30px;
+    background-position: center 80px;
     background-image: url("../images/banner2-small.jpg");
     background-size:contain;
     background-repeat: no-repeat;
     background-color: #f2f2f2;
 }
 .pics li:nth-child(3){
-    background-position: center bottom;
+    background-position: center 200px;
     background-image: url("../images/banner3-small.jpg");
     background-size:contain;
     background-repeat: no-repeat;
@@ -615,9 +615,12 @@ text-decoration: underline;
         background-image: url("../images/banner1-midd.jpg");
     }
     .pics li:nth-child(2){
+        background-position: center -30px;
+
         background-image: url("../images/banner2-midd.jpg");
     }
     .pics li:nth-child(3){
+        background-position: center bottom;
         background-image: url("../images/banner3-midd.jpg");
     }
    .smallbottom{
