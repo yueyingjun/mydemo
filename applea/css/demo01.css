@@ -1,0 +1,357 @@
+.small{
+    display: block;
+}
+.large{
+    display: none;
+}
+
+@media  screen and (min-width:765px ) {
+	.small{
+        display: none;
+
+    }
+    .large{
+        display: block;
+    }
+}
+
+
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.large{
+	min-width: 765px;
+	height: 43px;
+	background: rgba(0,0,0,.8);
+	border-top:1px solid rgba(0,0,0,.8);
+}
+.large .con{
+	height: 44px;
+	max-width:1024px;
+	margin: auto;
+}
+.large .con a{
+	float: left;
+	width: 10%;
+	line-height: 42px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	
+}
+.small{
+	max-width:765px;
+	height: 43px;
+	background: rgba(0,0,0,.8);
+	border-top:1px solid rgba(0,0,0,.8);
+	line-height: 43px;
+	z-index: 999;
+	position: relative;
+}
+.small .con{
+	width: 100%;
+	height: 100%;
+	line-height: 44px;
+}
+.blt{
+	width: 30px;
+	height: 30px;	
+	margin-top: 6px;
+	display: inline-block;
+	line-height: 30px;
+	position: absolute;
+	left: 0;
+}
+.small a{
+	float: left;
+	color: #fff;
+	text-decoration: none;
+	width: ;
+}
+.small .con a:nth-last-child(2){
+	position: absolute;
+	left: 50%;
+}
+.small .con a:nth-last-child(1){
+	position: absolute;
+	right: 2%;
+}
+.blt .line1{
+	margin: 5px auto;
+	width: 80%;
+	height: 2px;
+	background: #fff;
+	transition: transform 1s ease;	
+}
+.blt .line2{
+	margin: 5px auto;
+	width: 80%;
+	height: 2px;
+	background: #fff;	
+	transition: transform 1s ease;
+}
+.blt:hover .line1{	
+	transform: translate(0,7px) rotate(45deg);
+}
+.blt:hover .line2{
+	transform:  rotate(-45deg);
+}
+.meau{
+	width: 100%;
+	/*margin-top: 44px;*/
+	background:rgba(0,0,0,.8) ;
+	position: relative;
+	z-index: 999;
+}
+.meau li{
+	width: 100%;
+	height: 43px;
+	border-bottom: 1px dotted #fff;
+	margin:0 10px;
+	line-height: 43px;
+}
+.meau li a{
+	color: #fff;
+}
+.blts{
+	width: 200px;
+	height: 5px;
+	position: absolute;
+	bottom: 30px;
+	left: 40%;	
+	z-index: 999;
+}
+
+.blts .blt_a{
+	width: 25%;
+	height: 100%;
+	/*border: 1px solid red;*/
+	margin-left: 10px;
+	float: left;
+	 cursor: pointer; 
+	
+}
+.pro{
+	height:100%; 
+	display:block;
+	 background:gray; 
+	 width:0;
+
+	 /*transition: width 2s ease; 
+	 animation:progressbar  infinite;*/
+	 
+}
+/*@keyframes progressbar { 
+	from { width:0 } to { width:100% } 
+	}*/
+
+
+.wheel_left{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: gainsboro;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	position: absolute;
+	top: 46%;
+	left: 20px;	
+	opacity: 0;
+	z-index: 999;
+}
+
+.wheel_right{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: gainsboro;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	position: absolute;
+	top: 46%;
+	right: 20px;
+	opacity: 0;
+	z-index: 999;
+	
+}
+.wheel_left:hover{
+	opacity: 1;
+}
+.wheel_right:hover{
+	opacity: 1;
+}
+.wheel a{
+	text-decoration: none;
+}
+/*banjng*/
+
+	.wheel{
+	    width: 100%;
+	    height:420px;
+	    background:#000;
+	    position: relative;
+	    overflow: hidden;
+	}
+
+	.wheel .box{
+	    max-width:100%;
+	    margin:auto;height:100%;position: relative;
+	}
+	.wheel_list{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		
+	}	
+	.wheel_list:nth-child(1) {
+		background: url(../img/iphone_alt_large.jpg) no-repeat center;
+		background-size: contain;
+
+		left: 0;			
+	}
+	.wheel_list:nth-child(2) {
+		background: #fff;
+		background: url(../img/watch_alt_large.jpg) no-repeat center;
+		background-size: cover;
+		
+		
+	}
+	.wheel_list:nth-child(3) {
+		background: #fff;
+		
+		background: url(../img/2.jpg) no-repeat center;
+		background-size: cover;
+		
+	}
+	
+	.banner2{
+		width: 100%;
+	}
+	.banner2 li{
+		padding: 1px;
+		width: 100%;
+		height: 100%;
+		
+	}
+	.banner2 li img{
+		width: 100%;
+		height: 100%;
+	}
+
+/*foot*/
+.footer{
+	width: 100%;
+	height: auto;
+	background: gainsboro;
+}
+.footer h3{
+	font-size: 14px;
+	background: gainsboro;
+}
+.footer a{
+	color: #404040;
+	font: 8px;
+}
+.footer a:hover{
+	text-decoration: underline;
+}
+.row ul{
+	padding-left:10px ;
+}
+.new{
+	height: auto;
+	width: 100%;
+}
+.new ul{
+	height: auto;
+	width: 100%;
+	line-height: 39px;
+	background: gainsboro;
+}
+.new .one{
+	width: 100%;
+	height: 38px;
+	border-bottom: 1px dotted #fff;
+	position: relative;
+}
+.one h3{
+	position: absolute;
+	left: 10px;
+	font-size: 16px;
+}
+.one span{
+
+	cursor: pointer;
+
+}
+.one .t{
+	position: absolute;
+	right: 10px;
+}
+.one .t2{
+	position: absolute;
+	right: 10px;
+	display: none;
+}
+.one span{
+	float: right;
+	cursor: pointer;
+
+}
+.new_lie{
+	background:gainsboro ;
+	display: none;
+}
+.new_lie li{
+	border-bottom: 1px dotted #fff;
+	margin-left: 10px;
+		
+}
+.footer_a{
+	width: 100%;
+	height: auto;
+	margin-top: 30px;
+	
+	border-bottom: 1px dotted gainsboro;
+}
+.footer_a p{
+	margin-left: 10px;
+}
+.footer_c{
+	width: 100%;
+	height: auto;
+}
+.lie li{
+	float: left;
+	margin: 10px;
+}
+.container1:after,.footer_a:after,.footer_c:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.row:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+@media screen and (min-width:735px ) {
+	.wheel{		
+		height: 500px;	
+		position: relative;
+			
+	}	
+	.wheel_list:nth-child(3) {
+		background: url(../img/macbookpro_small.jpg) no-repeat center;
+		background-size: cover;
+				
+	}
+	
+}
