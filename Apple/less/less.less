@@ -1,0 +1,164 @@
+@col:12;
+@zhong:735px;
+@da:1024px;
+@color:#000000;
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+.container{
+  &-fuild {
+    width: 100%;
+    .clear();
+  }
+  &-fuild>.row{
+    width: 100%;
+    .clear();
+  }
+  &{
+    width: 735px;margin: auto;
+    .clear();
+  }
+  &>.row{
+    width: 100%;
+    .clear();
+  }
+}
+.clear(){
+  &{
+    &:before,&:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+body{
+  padding:0;
+  margin: 0;
+}
+//小屏
+.aa(s);
+.bgphoto:nth-child(1){
+  background: url("../img/accessories_small.jpg") no-repeat;
+}
+.bgphoto:nth-child(2){
+  background: url("../img/ipad_pro_small.jpg") no-repeat;
+}
+.bgphoto:nth-child(3){
+  background: url("../img/airpods_small.jpg") no-repeat;
+}
+.bgphoto:nth-child(4){
+  background: url("../img/iphone_upgrade_small.jpg") no-repeat;
+}
+.col-m-hide{
+  display: block;
+}
+.col-l-hide{
+  display: block;
+}
+.col-s-hide{
+  display: none;
+}
+//中屏
+@media screen and (min-width: @zhong){
+  .container{
+    width: @zhong;
+  }
+  .bgphoto:nth-child(1){
+    background: url("../img/accessories_medium.jpg") no-repeat;
+  }
+  .bgphoto:nth-child(2){
+    background: url("../img/ipad_pro_medium.jpg") no-repeat;
+  }
+  .bgphoto:nth-child(3){
+    background: url("../img/airpods_medium.jpg") no-repeat;
+  }
+  .bgphoto:nth-child(4){
+    background: url("../img/iphone_upgrade_medium.jpg") no-repeat;
+  }
+  .aa(m);
+  .col-l-hide{
+    display: block;
+  }
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+
+}
+//大屏
+@media screen and (min-width: @da){
+  .container{
+    width: @da;
+  }
+  .aa(l);
+  .bgphoto:nth-child(1){
+    background: url("../img/accessories_large.jpg") no-repeat;
+  }
+  .bgphoto:nth-child(2){
+    background: url("../img/ipad_pro_large.jpg") no-repeat;
+
+  }
+  .bgphoto:nth-child(3){
+    background: url("../img/airpods_large.jpg") no-repeat;
+
+  }
+  .bgphoto:nth-child(4){
+    background: url("../img/iphone_upgrade_large.jpg") no-repeat;
+
+  }
+
+  .col-m-hide{
+    display: block;
+  }
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+
+}
+.aa(@type,@i:1) when (@i<=@col){
+  .container-fuild>.row>.col-@{type}-@{i}{
+    height: 200px;
+    width:@i/@col*100%;
+    float: left;
+  }
+  //.container>.row>.col-@{type}-@{i}{
+  //  width: @i/@col*100%;
+  //  height: 200px;
+  //  float: left;
+  //}
+  //.col-push-@{i}{
+  //  margin-left:@i/@col*100%;
+  //}
+  //.col-pull-@{i}{
+  //  margin-right:-@i/@col*100%;
+  //}
+  //.col-offsetl-@{i}{
+  //  left:@i/@col*100%;
+  //  position: relative;
+  //}
+  //.col-offsetr-@{i}{
+  //  left:-@i/@col*100%;
+  //  position: relative;
+  //}
+
+  .aa(@type,@i:@i+1);
+}
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
