@@ -1,0 +1,94 @@
+@cols:12;
+@num1:736px;
+@num2:1070px;
+.container{//大盒子
+  &-fuild{
+    width:100%;
+    .clear();
+    margin:auto;
+  }
+  &-fuild{
+    &>.row{//行
+      width:100%;
+      .clear();
+    }
+  }
+  &{
+    width:@num1;
+    .clear();
+    margin:auto;
+    &>.row {  //行
+      width: 100%;
+      .clear();
+    }
+  }
+}
+//小屏
+
+.for(s);
+.col-m-hide{
+  display: block;
+}
+.col-l-hide{
+  display: block;
+}
+.col-s-hide{
+  display: none;
+}
+//中屏
+@media screen and (min-width: @num1){
+  .container{
+    min-width:@num1;
+  }
+  .for(m);
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+}
+// 大屏
+@media screen and (min-width: @num2) {
+  .container{
+    min-width:@num2;
+  }
+  .for(l);
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+}
+//清除浮动影响
+.clear(){
+  &{
+    &:before,&:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+//循环
+.for(@type,@i:1) when (@i<=@cols){
+  .container>.row .col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float: left;
+    position: relative;
+  }
+  .container-fuild>.row .col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float: left;
+    position: relative;
+  }
+
+  .for(@type,@i:@i+1);
+}

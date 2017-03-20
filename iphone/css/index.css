@@ -1,0 +1,620 @@
+body,html{
+    margin:0;padding: 0;
+    background: #eee;
+}
+a{
+    text-decoration: none;
+}
+*{
+    font-family:Arial;
+}
+ul,li{
+    padding:0;margin: 0;
+    list-style: none;
+}
+/*字体图片*/
+@font-face {font-family: "iconfont";
+    src: url('../fonts/iconfont.eot?t=1489658456547'); /* IE9*/
+    src: url('../fonts/iconfont.eot?t=1489658456547#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff?t=1489658456547') format('woff'), /* chrome, firefox */
+    url('../fonts/iconfont.ttf?t=1489658456547') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg?t=1489658456547#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:20px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bag:before { content: "\e617"; }
+
+.icon-iconfonticonfontpingguo:before { content: "\e673"; }
+
+.icon-sousuo_sousuo:before { content: "\e60b"; }
+/*小屏*/
+.small{
+    max-width: 765px;
+    height: 44px;
+    line-height: 42px;
+    background: rgba(0,0,0,0.8);
+    display: block;
+    padding-right: 12px;
+    padding-left: 12px;
+    position: relative;
+}
+.large{
+    display: none;
+}
+.small .con{
+    width:100%;
+}
+.small .con>div{
+    float: left;
+    width: 33.3333333333%;
+}
+.small .con a{
+    display: block;
+    float: left;
+    width: 33.3333333333%;
+    text-align: center;
+    color:#fff;
+}
+.small .con .small-right{
+    text-align: right;
+}
+.line{
+    width:30px;
+    margin-top:16px;
+    cursor: pointer;
+}
+.line1{
+    width:26px;
+    height: 1px;
+    background: #fff;
+    margin-top:10px;
+}
+.line2{
+    width:26px;
+    height: 1px;
+    background: #fff;
+    margin-top:10px;
+}
+.line1{
+     transition: transform 0.5s ease;
+ }
+.line2{
+   transition: transform 0.5s ease;
+ }
+.pull{
+    width:100%;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    top:44px;
+    left:0;
+    z-index: 20;
+    display: none;
+}
+.pull li{
+    width: 80%;
+    height:42px;
+    border-bottom:1px solid #666;
+    margin-left:10%;
+}
+.pull li a{
+    display: block;
+    color:#fff;
+}
+.pull li a:hover{
+    color:#ccc;
+}
+/*大屏*/
+@media screen and (min-width: 765px){
+    .large{
+        min-width: 765px;
+        display: block;
+        height: 44px;
+        background: rgba(0,0,0,0.8);
+    }
+    .small{
+        display: none;
+    }
+    .large .con{
+        max-width: 1000px;
+        margin: auto;
+        padding-left:12px;
+        padding-right: 12px;
+    }
+    .large .con a{
+        text-align: center;
+        display: block;
+        float: left;
+        width: 11.11111111111%;
+        line-height: 42px;
+        color:#fff;
+    }
+    .large .con a:hover{
+        color:#ccc;
+    }
+}
+
+/*banner*/
+.banner{
+  width:100%;
+  height: 550px;
+  text-align:center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+/*小屏*/
+.banner .banner-1{
+    width:110%;
+    height:550px;
+    background-image:url("../img/iphone_alt_small.jpg");
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: #0A0A0A;
+    position: absolute;
+    left:0;
+    top:0;
+    float:left;
+}
+.banner .banner-2{
+    width:110%;
+    height:550px;
+    background-image:url("../img/watch_alt_medium.jpg");
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: #F3F3F3;
+    position: absolute;
+    left:100%;
+    top:0;
+    float:left;
+}
+.banner .banner-3{
+    width:110%;
+    height:550px;
+    background-image:url("../img/macbookpro_portrait_small.jpg");
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    position: absolute;
+    left:100%;
+    top:0;
+    float:left;
+}
+/*中屏*/
+@media screen and (min-width:733px ) {
+    .banner .banner-1{
+        background-image:url("../img/iphone_alt_medium.jpg");
+    }
+    .banner .banner-2{
+        background-image:url("../img/watch_alt_medium.jpg");
+    }
+    .banner .banner-3{
+        background-image:url("../img/macbookpro_medium.jpg");
+    }
+}
+/*大屏*/
+@media screen and (min-width:1070px ) {
+    .banner .banner-1{
+        background-image:url("../img/iphone_alt_large.jpg");
+    }
+    .banner .banner-2{
+        background-image:url("../img/watch_alt_large.jpg");
+    }
+    .banner .banner-3{
+        background-image:url("../img/macbookpro_large.jpg");
+    }
+}
+
+.leftBtn{
+    width:10%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 99;
+}
+.rightBtn{
+    width:10%;
+    height: 100%;
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 99;
+}
+
+.btn{
+    width:60px;
+    height: 60px;
+    position: absolute;
+    left:0;right:0;bottom:0;top:0;margin:auto;
+    background: #ccc;
+    border-radius: 50%;
+    line-height: 60px;
+    text-align: center;
+    color:#fff;
+    font-size: 36px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.leftb,.rightb{
+    display: none;
+}
+.leftBtn:hover .leftb{
+    display: block;
+}
+.rightBtn:hover .rightb{
+    display: block;
+}
+.heng{
+    width:200px;
+    height:10px;
+    position: absolute;
+    bottom:30px;
+    right:0;
+    left:0;
+    margin:auto;
+    z-index: 99;
+}
+.kuang{
+    width:30%;
+    height:100%;
+    float: left;
+    margin-right:3%;
+    cursor: pointer;
+}
+.kuang>div{
+    width:100%;
+    height:2px;
+    background: #999;
+}
+.progress{
+    width:0;
+    height:2px;
+    background: #333;
+}
+
+.border{
+    border:2px solid #fff;
+    box-sizing:border-box;
+}
+.container{
+    width:100%;
+}
+/*小屏*/
+.img1{
+    height:200px;
+    background-image: url("../img/small (1).jpg");
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position: center;
+}
+.img2{
+    height:200px;
+    background-image: url("../img/small (2).jpg");
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position: center;
+}
+.img3{
+    height:200px;
+    background-image: url("../img/small (3).jpg");
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position: center;
+}
+.img4{
+    height:200px;
+    background-image: url("../img/small (4).jpg");
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position: center;
+}
+
+
+/*中屏*/
+@media screen and (min-width: 736px){
+    .img1{
+        height:200px;
+        background-image: url("../img/ipad_pro_medium.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+    .img2{
+        height:200px;
+        background-image: url("../img/tv_medium.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+    .img3{
+        height:200px;
+        background-image: url("../img/airpods_alt_medium.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+    .img4{
+        height:200px;
+        background-image: url("../img/accessories_medium.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+}
+/*大屏*/
+@media screen and (min-width:1070px) {
+    .img1{
+        height:200px;
+        background-image: url("../img/ipad_pro_large.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+    .img2{
+        height:200px;
+        background-image: url("../img/tv_large.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+    .img3{
+        height:200px;
+        background-image: url("../img/airpods_alt_large.jpg");
+        background-size:cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+    .img4{
+        height:200px;
+        background-image: url("../img/accessories_large.jpg");
+        background-size:cover ;
+        background-repeat:no-repeat ;
+        background-position: center;
+    }
+}
+
+/*大屏*/
+.smallFooter{
+    display: block;
+    width:100%;
+    padding-top: 20px;
+}
+.smallFooter li{
+    width:90%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #999;
+    margin: auto;
+    line-height: 38px;
+    font-size:12px;
+    position: relative;
+    color:#333;
+    cursor: pointer;
+}
+.smallFooter li span{
+    font-size: 16px;
+    color:#333;
+    position: absolute;
+    right:0;
+}
+.son{
+    display: none;
+    padding-left: 26px;
+}
+.son div a{
+    font-size:12px;
+    color:#777;
+}
+span{
+    transition: transform 0.5s ease;
+}
+.largeFooter{
+    display: none;
+}
+
+@media screen and (min-width: 770px) {
+    .largeFooter{
+        width:100%;
+        display: block;
+    }
+    .smallFooter{
+        display: none;
+    }
+   .footerCon{
+       max-width:1024px;
+       padding-left:20px ;
+       margin: auto;
+       overflow: hidden;
+   }
+    .footerzi{
+         width:20%;
+         float: left;
+     }
+    .footerzi:before,.footerzi:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .footerzi div{
+        margin-top:3px;
+    }
+    .footerzi div a{
+        color:#777;
+        font-size: 12px;
+    }
+    .footerzi div a:hover{
+        text-decoration: underline;
+    }
+    h6{
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+}
+/*floor 小屏*/
+.centerFloor{
+    display: none;
+}
+.largeFloor{
+    display: none;
+}
+.smallFloor{
+    display: block;
+    padding-left: 20px;
+    padding-right: 12px;
+    margin-top: 10px;
+}
+.smallFloor li{
+    max-width:770px;
+    margin:auto;
+    font-size: 12px;
+    color:#999;
+    padding-top: 10px;
+}
+.smallFloor li a:hover{
+    text-decoration: underline;
+}
+.smallFloor li:nth-child(1) a{
+    font-size: 12px;
+    color:#0070c9;
+}
+.smallFloor li:nth-child(2) .flag{
+    background: url("../img/16.png") no-repeat;
+    border-right:none;
+    padding-left: 20px;
+}
+.smallFloor li:nth-child(4){
+    padding-bottom: 10px;
+}
+.smallFloor li:nth-child(4) a{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right:1px solid #ccc;
+    padding-top: 0;
+    margin-top: 0;
+    color:#333;
+}
+.smallFloor li:nth-child(4) a:hover{
+    text-decoration: underline;
+}
+.smallFloor li:nth-child(4) a:nth-child(1){
+    padding-left: 0;
+}
+
+/*floor中屏*/
+@media screen and (min-width: 770px) {
+    .centerFloor{
+        display: block;
+        padding-left:12px;
+        padding-right:12px;
+    }
+    .largeFloor{
+        display: none;
+    }
+    .smallFloor{
+        display: none;
+    }
+    .centerFloor li{
+        max-width:930px;
+        margin:auto;
+        font-size: 12px;
+        color:#999;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        position: relative;
+    }
+    .centerFloor li a{
+        font-size: 12px;
+        color:#0070c9;
+    }
+    .centerFloor li a:hover{
+        text-decoration: underline;
+    }
+    .centerFloor .borderBottom{
+        border-bottom: 1px solid #ccc;
+    }
+    .centerFloor .flag{
+        padding-bottom: 0;
+    }
+    .centerFloor .centerFloora .flag{
+        background: url("../img/16.png") no-repeat;
+        border-right:none;
+        padding-left: 20px;
+        position: absolute;
+        right:0;
+    }
+    .centerFloor .centerzi{
+        padding-top: 0;
+    }
+     .centerFloor .centerzi a{
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right:1px solid #ccc;
+        padding-top: 0;
+        margin-top: 0;
+         color:#333;
+    }
+    .centerFloor .centerzi a:nth-child(1){
+        padding-left: 0;
+    }
+
+
+}
+/*floor大屏*/
+@media screen and (min-width: 930px) {
+    .largeFloor{
+        display: block;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top:20px;
+    }
+    .centerFloor{
+        display: none;
+    }
+    .smallFloor{
+        display: none;
+    }
+    .largeFloor li{
+        max-width:1000px;
+        margin:auto;
+        font-size: 12px;
+        color:#999;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        position: relative;
+    }
+    .largeFloor li a{
+        font-size: 12px;
+        color:#0070c9;
+    }
+    .largeFloor li a:hover{
+        text-decoration: underline;
+    }
+    .largeFloor .borderBottom{
+        border-bottom: 1px solid #ccc;
+    }
+    .largeFloor .largeFootera a{
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right:1px solid #ccc;
+        color:#333;
+    }
+    .largeFloor .largeFootera .flag{
+        background: url("../img/16.png") no-repeat;
+        border-right:none;
+        padding-left: 20px;
+        position: absolute;
+        right: 0;
+    }
+}
+
