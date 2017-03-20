@@ -1,0 +1,16 @@
+图片背景的处理
+background-image:url(),url();
+background-color:
+background-repeat:no-repeat,repeat-x;
+background-position:left top,right bottom;
+background-origin:  content-box;     填充
+                    padding-box;
+                    border-box;
+background-clip:    content-box;     裁切
+                    padding-box;
+                    border-box;
+background-size:   100px 100px,30px 30px;
+                   contain;   ->以比例大的魏基准
+                   cover;     ->以比例小的魏基准
+box-sizing:content-box;
+

@@ -43,18 +43,16 @@ $(function(){
         var currentTime=0;
 
         var flag=true;
-        var t1,t2;
         //自动轮播
-        t1=setInterval(auto,times)
-        function auto(){
+        var t1=setInterval(move,3000)
+        function move(){
             nextNum++;
             if(nextNum>$(".wheel-list").length-1){
                 nextNum=0;
-
             }
             $(".wheel-list").eq(currentNum).animate({
                 width:"80%",height:"80%"
-            })
+            });
 
             $(".wheel-list").eq(nextNum).animate({
                 left:0
@@ -65,14 +63,13 @@ $(function(){
                 if(nextNum==0){
                     flag=false;
                 }
-
                 currentNum=nextNum;
                 currentTime=0;
 
             }).css("zIndex",1);
 
         }
-        t2=setInterval(progress,50);
+        var t2=setInterval(progress,50);
         function progress(){
             currentTime+=50;
             var bili=currentTime/times;
@@ -103,7 +100,7 @@ $(function(){
                     width:"80%",height:"80%"
                 })
 
-                $(".wheel-list").eq(nextNum).animate({
+                $(".wheel-list").eq(nextNum).css("left","100%").animate({
                     left:0
                 },function(){
                     $(".wheel-list").eq(currentNum).css({
@@ -130,21 +127,38 @@ $(function(){
         }
 
         $(".leftBtn").click(function(){
-            nextNum--
+            nextNum--;
             if(nextNum==-1){
                 nextNum=$(".wheel-list").length-1;
             }
             stop();
-        })
+        });
 
         $(".rightBtn").click(function(){
-            nextNum++
+            nextNum++;
             if(nextNum>$(".wheel-list").length-1){
                 nextNum=0;
             }
             stop();
-        })
+        });
 
+        var flogg=true;
+        $(window).blur(function(){
+            if(flogg==true){
+                clearInterval(t1);
+                clearInterval(t2);
+                flogg=false;
+                currentTime=0;
+            }
+        });
+        $(window).focus(function(){
+            if(flogg==false){
+                t1=setInterval(move,3000);
+                t2=setInterval(progress,50);
+                flogg=true;
+            }
+
+        });
     }
     banner();
 
