@@ -138,6 +138,7 @@ $(function () {
             $(".jia").css({transform:"translate(0,0px) rotate(45deg)"});
         }
     }
+
     $(".fuwu2 div").click(function(){
         if(flag2){
             $(".jia").css({
