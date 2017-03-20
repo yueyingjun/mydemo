@@ -1,0 +1,509 @@
+@cols:12;
+@num1:1200px;
+@num2:900px;
+*{
+  box-sizing: border-box;
+}
+/*相应小屏*/
+.container{
+  &-fluid{
+     width:100%;margin:auto;
+    .clear();
+  }
+  &-fluid>.row{
+    width:100%;
+    .clear();
+  }
+
+  &{
+    width:600px;margin:auto;
+    .clear();
+  }
+  &>.row{
+    width:100%;
+    .clear();
+  }
+
+}
+.for(s);
+.col-l-hide{
+  display: block;
+}
+.col-m-hide{
+  display: block;
+}
+.col-s-hide{
+  display: none;
+}
+
+/*中屏*/
+
+@media screen and (min-width: @num2){
+  .container{
+    width:@num2;
+  }
+  .for(m);
+
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+
+}
+
+/*大屏*/
+
+@media screen and (min-width: @num1){
+  .for(l);
+  .container{
+    width:@num1;
+  }
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+
+}
+
+
+
+.for(@type,@i:1) when (@i<=@cols){
+
+  .container>.row>.col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float:left;position: relative;
+  }
+@cols:12;
+@num1:735px;
+@num2:1068px;
+//流式布局
+//固定布局
+//响应式框架  css3框架
+//响应小屏
+.container{
+  &-fluid{
+    width:100%;
+    //margin: auto;
+    .clear();
+  }
+  &-fluid>.rows{
+    width:100%;
+    .clear();
+  }
+  &{
+    width:100%;
+    //margin: auto;
+    .clear();
+  }
+  &>.rows{
+    width:100%;
+    .clear();
+  }
+}
+.clear(){
+  &{
+    &:before,&:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+.for(s);
+.col-l-hide{
+  display: block;
+}
+.col-m-hide{
+  display: block;
+}
+.col-s-hide{
+  display:none;
+}
+//中屏
+@media screen and (min-width:@num1){
+  .for(m);
+  .container{
+    width: @num1;
+  }
+  .col-s-hide{
+    display:block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+}
+//大屏
+@media screen and (min-width:@num2){
+  .for(l);
+  .container{
+    width: @num2;
+  }
+  .col-s-hide{
+    display:block;
+  }
+  .col-m-hide{
+    display:block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+}
+//小屏
+.for(@type,@i:1) when (@i<=@cols){
+  .container-fluid>.rows>.col-@{type}-@{i}{ //链接加花括号
+    width:@i/@cols*100%;
+    float: left;
+    position: relative;
+  }
+  .container>.rows>.col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float: left;
+    position: relative;
+  }
+  .container>.rows>.col-@{type}-offset-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container>.rows>.col-@{type}-push-@{i}{//往后推
+    left:@i/@cols*100%;
+  }
+  .container>.rows>.col-@{type}-pull-@{i}{//往前拉
+    left:-@i/@cols*100%;
+  }
+  .for(@type,@i:@i+1);
+}
+////去默认样式开始
+//body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,input{
+//  margin:0;
+//  padding: 0;
+//  list-style: none;
+//}
+//img{
+//  border:0;
+//}
+//a{
+//  text-decoration: none;
+//}
+////去默认样式结束
+////顶部开始
+//@font-face {
+//  font-family: 'iconfont';
+//  src: url('iconfont.eot');
+//  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+//  url('iconfont.woff') format('woff'),
+//  url('iconfont.ttf') format('truetype'),
+//  url('iconfont.svg#iconfont') format('svg');
+//}
+//.iconfont{
+//  font-family:"iconfont" !important;
+//  font-size:16px;font-style:normal;
+//  -webkit-font-smoothing: antialiased;
+//  -webkit-text-stroke-width: 0.2px;
+//  -moz-osx-font-smoothing: grayscale;
+//}
+//.header{
+//  width: 100%;
+//  height: 40px;
+//  background: #444;
+//}
+//.neikuan{
+//  width: 95%;
+//  height: 100%;
+//  margin:0 auto;
+//}
+//.neikuan span{
+//  float: right;
+//  line-height: 40px;
+//  font-size: 12px;
+//  color: #a8a8aa;
+//}
+//@media screen and (min-width: 1024px){
+//  .neikuan{
+//    width: 976px;
+//  }
+//}
+////顶部结束
+//
+////导航开始
+//@media screen and (max-width: 1000px){
+//  .row{
+//    width: 100% !important;
+//  }
+//}
+//.container{
+//  width: 100%;
+//  height: 44px;
+//  background: rgba(0,0,0,0.9);
+//}
+//.row{
+//  width:1000px;height: 44px;margin: 0 auto;text-align: justify;vertical-align: middle;line-height: 44px;
+//  cursor: default;
+//  -webkit-user-select: none;
+//  -moz-user-select: none;
+//  -ms-user-select: none;
+//  user-select: none;
+//  padding: 0 15px;
+//  box-sizing: border-box;
+//  position: relative;
+//}
+//.row:after{
+//  content: "";width: 100%;display: inline-block;
+//}
+//.row>.item {
+//  height: 44px;
+//  color: #fff;
+//  font-size: 12px;
+//  transition: all 0.5s;
+//  display: inline-block;
+//}
+//.row>.item:hover{
+//  color: #B2B2B2;
+//}
+//.row>.iconfont{
+//  font-size: 20px;
+//}
+//.row>.end{
+//  font-size: 16px;
+//}
+//.listrow{
+//  width: 100%;
+//  height: 44px;
+//  text-align: justify;
+//  vertical-align: middle;
+//  line-height: 44px;
+//  cursor: default;
+//  padding: 0 15px;
+//  box-sizing: border-box;
+//  //display: none;
+//}
+//.listrow:after {
+//  content: "";
+//  width: 100%;
+//  display: inline-block;
+//}
+//.listrow .imp{
+//  display: inline-block;width: 20px;height: 20px;padding-top: 8px;z-index:333!important;
+//}
+//.listrow .imp span{
+//  display: block;width: 15px;height: 1px;background-color: #fff;
+//}
+//.listrow .imp span:nth-child(1){
+//  margin-top: 8px;
+//}
+//.listrow .imp span:nth-child(2){
+//  margin-top: 5px;
+//}
+//.listrow .imp:hover>span{
+//  background-color:#B2B2B2!important;
+//}
+//.listrow .iconfont{
+//  display: inline-block;
+//  height: 44px;
+//  color: #fff;
+//  font-size: 20px;
+//}
+//.listrow .iconfont:hover{
+//  color: #B2B2B2;
+//}
+//@media screen and (max-width: 720px){
+//  .listrow {
+//    display: block;
+//  }
+//  .row{
+//    display: none;
+//  }
+//}
+////点击出现开始
+////@media only screen and (max-width: 767px){
+////
+////}
+////点击出现关闭
+//
+//  //导航结束
+////图片部分开始
+//.box{
+//  border-bottom: 2px solid #fff;
+//}
+//.photo>a{
+//  display:block;
+//  height: 200px;
+//  box-sizing:border-box;
+//  border-top: 2px solid #fff;
+//  border-right: 2px solid #fff;
+//  background-size: 100% 100%;
+//  background-repeat: no-repeat;
+//}
+//.photo1>a{
+//  background-image: url("../image/1.jpg");
+//}
+//.photo2>a{
+//  background-image: url("../image/2.jpg");
+//}
+//.photo3>a{
+//  background-image: url("../image/3.jpg");
+//}
+//.photo4>a{
+//  background-image: url("../image/4.jpg");
+//  border-right: none;
+//}
+////图片部分结束
+//.foot{
+//  width: 100%;
+//  height: auto;
+//  .clear();
+//  background: #f2f2f2;
+//}
+////文字部分开始
+//.font{
+//  width:980px;
+//  border-bottom: 1px solid #d6d6d6;
+//  color: #888;
+//  font-size: 10px;
+//  padding: 17px 0 11px;
+//  margin: auto;
+//}
+////文字部分结束
+////底部开始
+//.footer{
+//  max-width:980px ;
+//  height: auto;
+//  padding-top: 20px;
+//  margin: auto;
+//  .clear();
+//}
+//.footer dl{
+//  width: 20%;
+//  font-size: 11px;
+//  float: left;
+//}
+//.footer dl dt{
+//  margin-bottom: 6px;
+//  color: #333;
+//}
+//.footer dl dd>a{
+//  display: block;
+//  margin-bottom: 6px;
+//  color: #555;
+//  font-size: 10px;
+//}
+//.footer dl dd>a:hover{
+//  color: #333;
+//  text-decoration: underline;
+//}
+//.zuidibu{
+//  color: #888;
+//  padding: 34px 0 21px;
+//  margin: auto;
+//  max-width: 980px;
+//}
+//.zuidibu .shop{
+//  width: 100%;
+//  margin-bottom: 7px;
+//  padding-bottom: 6px;
+//  border-bottom: 1px solid #d6d6d6;
+//  font-size: 10px;
+//  color: #888;
+//}
+//.zuidibu .shop>a{
+//  color: #0070c9;
+//}
+//.legal{
+//  width: 100%;
+//}
+//.legal .copyright{
+//  font-size: 10px;
+//  color: #888;
+//  float: left;
+//}
+//.legal ul{
+//  float: left;
+//  margin-left: 30px;
+//}
+//.legal ul li{
+//  float: left;
+//  margin-right: 10px;
+//  font-size: 10px;
+//}
+//.legal ul li>a{
+//  font-size: 10px;
+//  color: #555555;
+//  display: block;
+//}
+//.legal ul li>a:hover{
+//  text-decoration: underline;
+//}
+//.right{
+//  width: auto;
+//  height: auto;
+//  float: right;
+//  .clear();
+//}
+//.right span:nth-child(1){
+//  display: block;
+//  width: 16px;
+//  height: 16px;
+//  background-image: url("../image/16.png");
+//  background-repeat: no-repeat;
+//  float: left;
+//  padding-right: 5px;
+//}
+//.right span:nth-child(2){
+//  float: left;
+//  font-size: 10px;
+//  color: #555;
+//}
+//.zuidibu p{
+//  max-width: 980px;
+//  margin-top: -15px;
+//  margin-bottom: 20px;
+//  color: #999;
+//  font-size: 10px;
+//  margin: auto;
+//}
+//.zuidibu p>a{
+//  color: #999;
+//}
+////底部结束
+  .container>.row>.col-@{type}-offset-@{i}{
+      margin-left:@i/@cols*100%;
+  }
+
+  .container>.row>.col-@{type}-push-@{i}{
+    left:@i/@cols*100%;
+  }
+  .container>.row>.col-@{type}-pull-@{i}{
+    left:-@i/@cols*100%;
+  }
+
+
+  .container-fluid>.row>.col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float:left;position: relative;
+  }
+  .for(@type,@i+1);
+}
+
+
+
+
+.clear(){
+  & {
+    &:before, &:after {
+      content: "";
+      display: none;
+      clear: both;
+    }
+  }
+}
