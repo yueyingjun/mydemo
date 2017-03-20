@@ -1,0 +1,563 @@
+body,ul,div,p,h1,h2,h3,h4,h5,h6{
+	padding: 0;
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	color:white;
+	text-decoration: none;
+}
+.bg{
+	width: 100%;
+	height:44px;
+	background:rgba(0,0,0,.8);
+}
+/*小屏*/
+.small{
+	max-width:765px;
+	height:44px;
+	display: block;
+	line-height:44px;
+	margin:0 auto;
+	padding:0 20px;
+}
+.big{
+	max-width:1024px;
+	line-height:43px;
+	display: none;
+	margin:0 auto;
+}
+.small:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.big:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.sm{
+	width:33.3333%;
+	height: 44px;
+	/*padding:0 10px;*/
+	float: left;
+	text-align: center;
+}
+.line1{
+	width:15px;
+	height:1px;
+	border-bottom:1px solid #fff;
+	margin-top:17px;
+	transition:transform 0.5s ease;
+}
+.line2{
+	width:15px;
+	height:1px;
+	border-bottom:1px solid #fff;
+	margin-top:5px;
+	transition:transform 0.5s ease;
+}
+.bag{
+	text-align: right;
+}
+.btn{
+	cursor: pointer;
+}
+.smlist{
+	display: none;
+	min-width:570px;
+	height: 100%;
+	z-index: 10;
+	padding:0 48px;
+	text-align: center;
+	background:rgba(0,0,0,.8);
+}
+.smlist li{
+	height: 44px;
+	width: 80%;
+	padding:0 20px;
+	text-align:left;
+	line-height: 44px;
+	border-bottom:1px solid #ccc;
+	display: block;
+	margin: 0 auto;
+	color: white;
+	cursor: pointer;
+}
+.container-fluid1{
+	min-height: 500px;
+	position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-height: 100%;;
+    height: 500px;
+}
+.clear{
+	width: 105%;
+	height: 105%;
+	position:absolute;
+}
+.clear li{
+	height: 105%;
+	width: 105%;
+	position: absolute;
+	left:100%;
+	top:0;
+	/*padding:0 100px;*/
+}
+.clear li:nth-child(1){
+	left:0;
+	background:url(../img/iphone1.jpg) no-repeat center center;
+	background-size:contain;
+	background-color: #0A0A0A;
+}
+.clear li:nth-child(2){
+	left:100%;
+	background:url(../img/watch_alt_large.jpg) no-repeat center center;
+	background-size:contain;
+	background-color: #F3F3F3;
+	
+}
+.clear li:nth-child(3){
+	left:100%;
+	background:url(../img/macbookpro_large.jpg) no-repeat center center;
+	background-size:contain;
+	background-color: #FFFFFF;
+}
+.leftbtn{
+	position: absolute;
+    cursor: pointer;
+    width: 20%;
+    left: 0;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+     opacity: 0;
+    transition: opacity 0.6s ease; 
+}
+.leftbtn span{
+	z-index: 1000;
+    border-radius:50%;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(180,180,180,0.25);
+    color: #848484;
+    font-size: 55px;
+    line-height: 64px;
+    display: block;
+    text-align: center;
+    margin: 250px auto;
+}
+.rightbtn span{
+	z-index: 1000;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(180,180,180,0.25);
+    color: #848484;
+    font-size: 55px;
+    line-height: 64px;
+    display: block;
+    text-align: center;
+    margin: 250px auto;
+   
+}
+.d{
+	position: absolute;
+    z-index: 1000;
+    bottom: 20px;
+    margin:0 auto;
+    text-align: center;
+    line-height: 1;
+    left: 42%;
+}
+.d li{
+	float: left;
+	position: relative;
+    z-index: 1;
+    height: 2px;
+    width: 100%;
+    background-color: rgba(128,128,128,0.2);
+    width:50px;
+    margin-right: 10px;
+}
+.pro{
+    height: 2px;
+    width:0%;
+    background-color: orange;
+    margin-right: 10px;
+}
+.rightbtn{
+	position: absolute;
+    cursor: pointer;
+    width: 20%;
+    right: 0;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.6s ease; 
+}
+.leftbtn:hover{
+	opacity:0.8;
+}
+.rightbtn:hover{
+	opacity:0.8;
+}
+
+
+.si{
+	max-height:200px;
+	height: 200px;
+}
+.row{
+	height:100%;
+}
+.clear1{
+	height: 100%;
+}
+.clear1 li{
+	height:100%;
+}
+.one{
+		background: url(../img/s111.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	.two{
+		background: url(../img/s222.jpg) no-repeat center center;
+		background-size: cover;
+		
+	}
+	.three{
+		background: url(../img/s333.jpg) no-repeat center center;
+		background-size: cover;
+		
+	}
+	.four{
+		background: url(../img/s444.jpg) no-repeat center center;
+		background-size: cover;	
+	}
+	
+	
+	
+	
+	
+.smallFooter{
+    display: block;
+    width:100%;
+    padding-top: 20px;
+}
+.smallFooter li{
+    width:90%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #999;
+    margin: auto;
+    line-height: 38px;
+    font-size:12px;
+    position: relative;
+    color:#333;
+    cursor: pointer;
+}
+.smallFooter li span{
+    font-size: 16px;
+    color:#333;
+    position: absolute;
+    right:0;
+}
+.son{
+    display: none;
+    padding-left: 26px;
+}
+.son div a{
+    font-size:12px;
+    color:#777;
+}
+span{
+    transition: transform 0.5s ease;
+}
+.largeFooter{
+    display: none;
+}
+	
+	
+	
+	
+	
+	
+@media only screen and (min-width:765px){
+	.small{
+		display: none;
+	}
+	.big{
+	display:block;
+    }
+    .list{
+    	width:11.111111%;
+    	float: left;
+    	text-align: center;
+    }
+    .list a:hover{
+    	transition:0.7s ease;
+    	opacity:0.5;
+    }
+    .one{
+		background: url(../img/m111.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	.two{
+		background: url(../img/m222.jpg) no-repeat center center;
+		background-size: cover;
+		
+	}
+	.three{
+		background: url(../img/m333.jpg) no-repeat center center;
+		background-size: cover;
+		
+	}
+	.four{
+		background: url(../img/m444.jpg) no-repeat center center;
+		background-size: cover;	
+	}
+    h3{
+    	width:1000px;
+    	margin: 0 auto;
+    	font-size:12px;
+    	padding:20px 0;
+    	color:#888;border-bottom: 1px solid #ccc;
+    }
+    .si{
+    	max-height:200px;
+    	height: 200px;
+    }
+}
+.color{
+	font-size:12px;
+	color: #888;
+	
+}
+@media only screen and (min-width:1024px){
+	.si{
+		min-height:200px;
+		height: 200px;
+	}
+	.one{
+		background: url(../img/111.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	.two{
+		background: url(../img/222.jpg) no-repeat center center;
+		background-size: cover;
+		
+	}
+	.three{
+		background: url(../img/333.jpg) no-repeat center center;
+		background-size: cover;
+		
+	}
+	.four{
+		background: url(../img/444.jpg) no-repeat center center;
+		background-size: cover;	
+	}
+	
+}
+
+
+
+@media screen and (min-width: 770px) {
+    .largeFooter{
+        width:100%;
+        display: block;
+    }
+    .smallFooter{
+        display: none;
+    }
+   .footerCon{
+       max-width:1024px;
+       padding-left:20px ;
+       margin: auto;
+       overflow: hidden;
+   }
+    .footerzi{
+         width:20%;
+         float: left;
+     }
+    .footerzi:before,.footerzi:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .footerzi div{
+        margin-top:3px;
+    }
+    .footerzi div a{
+        color:#777;
+        font-size: 12px;
+    }
+    .footerzi div a:hover{
+        text-decoration: underline;
+    }
+    h6{
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+}
+/*floor 小屏*/
+.centerFloor{
+    display: none;
+}
+.largeFloor{
+    display: none;
+}
+.smallFloor{
+    display: block;
+    padding-left: 20px;
+    padding-right: 12px;
+    margin-top: 10px;
+}
+.smallFloor li{
+    max-width:770px;
+    margin:auto;
+    font-size: 12px;
+    color:#999;
+    padding-top: 10px;
+}
+.smallFloor li a:hover{
+    text-decoration: underline;
+}
+.smallFloor li:nth-child(1) a{
+    font-size: 12px;
+    color:#0070c9;
+}
+.smallFloor li:nth-child(2) .flag{
+    background: url("../img/16.png") no-repeat;
+    border-right:none;
+    padding-left: 20px;
+}
+.smallFloor li:nth-child(4){
+    padding-bottom: 10px;
+}
+.smallFloor li:nth-child(4) a{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right:1px solid #ccc;
+    padding-top: 0;
+    margin-top: 0;
+    color:#333;
+}
+.smallFloor li:nth-child(4) a:hover{
+    text-decoration: underline;
+}
+.smallFloor li:nth-child(4) a:nth-child(1){
+    padding-left: 0;
+}
+
+/*floor中屏*/
+@media screen and (min-width: 770px) {
+    .centerFloor{
+        display: block;
+        padding-left:12px;
+        padding-right:12px;
+    }
+    .largeFloor{
+        display: none;
+    }
+    .smallFloor{
+        display: none;
+    }
+    .centerFloor li{
+        max-width:930px;
+        margin:auto;
+        font-size: 12px;
+        color:#999;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        position: relative;
+    }
+    .centerFloor li a{
+        font-size: 12px;
+        color:#0070c9;
+    }
+    .centerFloor li a:hover{
+        text-decoration: underline;
+    }
+    .centerFloor .borderBottom{
+        border-bottom: 1px solid #ccc;
+    }
+    .centerFloor .flag{
+        padding-bottom: 0;
+    }
+    .centerFloor .centerFloora .flag{
+        background: url("../img/16.png") no-repeat;
+        border-right:none;
+        padding-left: 20px;
+        position: absolute;
+        right:0;
+    }
+    .centerFloor .centerzi{
+        padding-top: 0;
+    }
+     .centerFloor .centerzi a{
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right:1px solid #ccc;
+        padding-top: 0;
+        margin-top: 0;
+         color:#333;
+    }
+    .centerFloor .centerzi a:nth-child(1){
+        padding-left: 0;
+    }
+
+
+}
+/*floor大屏*/
+@media screen and (min-width: 930px) {
+    .largeFloor{
+        display: block;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top:20px;
+    }
+    .centerFloor{
+        display: none;
+    }
+    .smallFloor{
+        display: none;
+    }
+    .largeFloor li{
+        max-width:1000px;
+        margin:auto;
+        font-size: 12px;
+        color:#999;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        position: relative;
+    }
+    .largeFloor li a{
+        font-size: 12px;
+        color:#0070c9;
+    }
+    .largeFloor li a:hover{
+        text-decoration: underline;
+    }
+    .largeFloor .borderBottom{
+        border-bottom: 1px solid #ccc;
+    }
+    .largeFloor .largeFootera a{
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right:1px solid #ccc;
+        color:#333;
+    }
+    .largeFloor .largeFootera .flag{
+        background: url("../img/16.png") no-repeat;
+        border-right:none;
+        padding-left: 20px;
+        position: absolute;
+        right: 0;
+    }
+}
