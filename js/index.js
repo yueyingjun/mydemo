@@ -43,10 +43,10 @@ $(function(){
 		next--
 		if(next<0){
 			next=$(".clear li").length-1
-		    $(".pro").css("width","0px").eq(next).css("width","100%")	
+
 		}
 		$(".clear li").eq(next).css({"left":"0","width":"95%","height":"95%"})
-//		$(".pro").eq(now).css({"width":"100%"})
+		    $(".pro").css("width","0px").eq(next).css("width","100%")	
             $(".clear li").eq(now).animate({"left":"100%"},800,function(){
 			$(this).css({"width":"95%","height":"95%","z-index":"2"})
 		    })

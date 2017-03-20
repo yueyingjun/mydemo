@@ -172,7 +172,9 @@ a{
     margin:0 auto;
     text-align: center;
     line-height: 1;
-    left: 42%;
+    left: 0;
+    right: 0;
+    width:180px;
 }
 .d li{
 	float: left;
