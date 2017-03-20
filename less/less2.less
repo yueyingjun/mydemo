@@ -1,0 +1,117 @@
+@row:60;
+@num2:1070px;
+@num1:735px;
+
+
+//响应小屏
+
+.container{
+  &-fuild{
+    width: 100%;
+    margin: 0 auto;
+    .clear();
+  }
+  &{
+    width: 100%;
+    margin: 0 auto;
+    .clear();
+  }
+  &-fuild>.row{
+    width: 100%;
+    .clear();
+  }
+  &>.row{
+    width:100%;
+    .clear();
+  }
+}
+
+//小
+.for(s);
+.col-m-hide{
+  display: block;
+}
+.col-l-hide{
+  display: block;
+}
+.col-s-hide{
+  display: none;
+}
+
+//中
+@media screen and (min-width: @num1){
+  .container{
+    width: 100%;
+  }
+  .for(m);
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+}
+
+//大
+@media screen and (min-width: @num2){
+  .container{
+    width: 100%;
+  }
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+  .for(l);
+}
+
+
+.for(@type,@i:1) when(@i<=@row){
+  .container-fuild>.row>.col-@{type}-@{i}{
+    width: @i/@row*100%;
+    float: left;
+    position: relative;
+  }
+  .container>.row>.col-@{type}-@{i}{
+    width: @i/@row*100%;
+    position: relative;
+    float: left;
+  }
+  .container-fuild>.row>.col-@{type}-offect-@{i}{
+    margin-left: @i/@row*100%;
+    float: left;
+  }
+  .container-fuild>.row>.col-@{type}-push-@{i}{
+    left: @i/@row*100%;
+  }
+  .container-fuild>.row>.col-@{type}-pull-@{i}{
+    left: -@i/@row*100%;
+  }
+  .container>.row>.col-@{type}-offect-@{i}{
+    margin-left: @i/@row*100%;
+  }
+  .container>.row>.col-@{type}-push-@{i}{
+    left: @i/@row*100%;
+  }
+  .container>.row>.col-@{type}-pull-@{i}{
+    left: -@i/@row*100%;
+  }
+  .for(@type,@i+1);
+}
+
+.clear(){
+  &{
+    &:before,&:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
