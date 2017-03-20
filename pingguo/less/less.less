@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../css/iconfont.eot');
+  src: url('../css/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../css/iconfont.woff') format('woff'),
+  url('../css/iconfont.ttf') format('truetype'),
+  url('../css/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:22px;font-style:normal;
+  color:#fff;
+  -webkit-font-smoothing: antialiased;//消除锯齿
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+@cols:12;
+@num1:735px;
+@num2:1050px;
+//流式
+//固定
+*{
+  box-sizing:border-box;
+}
+.container{
+  &-fluid{
+	width:100%;margin:auto;
+	.clear();
+  }
+  &-fluid > .row{
+	width:100px;
+	.clear();
+  }
+  &{
+	width:100%;margin:auto;
+	.clear();
+  }
+  & > .row{
+	width:100%;
+	.clear();
+  }
+}
+
+.clear(){
+  &{
+	&:before,&:after{
+	  content:"";
+	  clear:both;
+	  display:block;
+	}
+  }
+}
+//小屏
+.for(s);
+.col-m-hide{
+  display:block;
+}
+.col-l-hide{
+  display:block;
+}
+.col-s-hide{
+  display:none;
+}
+.img1{
+	background-image:url(../img/small1.jpg);
+}
+.img2{
+	background-image:url(../img/small2.jpg);
+}
+.img3{
+	background-image:url(../img/small3.jpg);
+}
+.img4{
+	background-image:url(../img/small4.jpg);
+}
+@media screen and (min-width:@num1){
+  .container{
+	width:100%;
+  }
+  .col-s-hide{
+	display: block;
+  }
+  .col-l-hide{
+	display: block;
+  }
+  .col-m-hide{
+	display: none;
+  }
+  .for(m);
+	.img1{
+		background-image:url(../img/medium1.jpg);
+	}
+	.img2{
+		background-image:url(../img/medium2.jpg);
+	}
+	.img3{
+		background-image:url(../img/medium3.jpg);
+	}
+	.img4{
+		background-image:url(../img/medium4.jpg);
+	}
+}
+@media screen and (min-width:@num2){
+  .container{
+	width:100%;
+  }
+  .col-s-hide{
+	display: block;
+  }
+  .col-m-hide{
+	display:block;
+  }
+  .col-l-hide{
+	display: none;
+  }
+  .for(l);
+	.img1{
+		background-image:url(../img/1.jpg);
+	}
+	.img2{
+		background-image:url(../img/2.jpg);
+	}
+	.img3{
+		background-image:url(../img/3.jpg);
+	}
+	.img4{
+		background-image:url(../img/4.jpg);
+	}
+}
+.for(@type,@i:1) when (@i<=@cols){
+  .container-fluid>.row>.col-@{type}-@{i}{//连接的时候加括号
+	width:@i/@cols*100%;position:relative;
+	float: left;
+  }
+  .container > .row > .col-@{type}-@{i}{
+	width:@i/@cols*100%;position:relative;
+	float:left;
+  }
+  .container > .row > .col-@{type}-offect-@{i}{
+	margin-left:@i/@cols*100%;
+  }
+  .container > .row > .col-@{type}-push-@{i}{
+	left:@i/@cols*100%;
+  }
+  .container > .row > .col-@{type}-pull-@{i}{
+	left:-@i/@cols*100%;
+  }
+  .for(@type,@i:@i+1);
+}
