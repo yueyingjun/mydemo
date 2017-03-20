@@ -1,0 +1,208 @@
+@import "less.css";
+body{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+/*字体设置*/
+@font-face {font-family: "iconfont";
+    src: url('../font/iconfont.eot?t=1489721398843'); /* IE9*/
+    src: url('../font/iconfont.eot?t=1489721398843#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff?t=1489721398843') format('woff'), /* chrome, firefox */
+    url('../font/iconfont.ttf?t=1489721398843') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1489721398843#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apple:before { content: "\e61d"; }
+
+.icon-bag:before { content: "\e64b"; }
+
+.icon-search:before { content: "\e601"; }
+
+
+/*顶部响应*/
+.small{
+    display: block;
+}
+.large{
+    display: none;
+}
+@media screen and (min-width:765px) {
+    .small{
+        display: none;
+    }
+    .large{
+        display: block;
+    }
+
+}
+.large{
+    min-width:765px;height:44px;
+    background: rgba(0,0,0,0.8);
+}
+.large .con{
+    width:100%;height:44px;
+    margin:auto;
+}
+.large .con a{
+    width:11.1111%;height:44px;
+    display: block;
+    text-align: center;line-height: 44px;
+    color:#fff;
+    float:left;
+    font-size: 1em;
+}
+
+.small{
+    max-width:765px;height:44px;
+    background: rgba(0,0,0,0.8);
+    position:relative;
+}
+.small .con{
+    max-width:100%;height:44px;
+    padding:0 20px;margin:auto;
+}
+.small_list{
+    width:33.3333%;height:44px;
+    text-align: center;line-height: 44px;
+    color:#fff;
+    float:left;
+}
+.small_list:first-child{
+    text-align: left;
+}
+.small_list:last-child{
+    text-align: right;
+}
+.small_list:nth-child(1){
+    margin-top:8px;
+}
+.btn{
+    width:20px;height:10px;
+    margin-top:11px;
+    clolr:#fff;
+}
+.btn .line1{
+    widht:100%;height:1px;
+    background:#fff;
+}
+.btn .line2{
+    widht:100%;height:1px;
+    background:#fff;
+    margin-top:5px;
+}
+.menu{
+    width:100%;min-height:500px;
+    position:absolute;
+    top:28px;left:0;
+    background:rgba(0,0,0,0.8);
+    padding-top:20px;
+}
+.menu li{
+    width:80%;
+    padding:15px 0;  float:left;
+    border-bottom:1px solid #fff;
+}
+.menu li a{
+    color:#fff;
+}
+
+/*banner*/
+/*中屏*/
+@media screen and (min-width: 438px) {
+
+}
+
+/*大屏*/
+@media screen and (min-width: 700px) {
+
+}
+
+
+
+
+
+
+/*响应四张图片*/
+.pic_list{
+    height:200px;
+}
+/*小屏*/
+.pic_list .row a:nth-child(1){
+    background-size: 735px 200px;
+    background-repeat: no-repeat;
+    background-image: url(../images/accessories_small.jpg);
+}
+.pic_list .row:nth-child(2){
+    background-size: 735px 200px;
+    background-repeat: no-repeat;
+    background-image: url(../images/ipad_pro_medium.jpg);
+}
+.pic_list .row:nth-child(3){
+    background-size: 735px 200px;
+    background-repeat: no-repeat;
+    background-image: url(../images/iphone_upgrade_medium.jpg);
+}
+/*中屏*/
+@media screen and (min-width: 735px) {
+    .pic_list .row:nth-child(1){
+        background-size: 640px 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/accessories_medium.jpg);
+    }
+    .pic_list .row:nth-child(2){
+        background-size: 640px 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/ipad_pro_medium.jpg);
+    }
+    .pic_list .row:nth-child(3){
+        background-size: 640px 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/airpods_medium.jpg);
+    }
+    .pic_list .row:nth-child(4){
+        background-size: 640px 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/iphone_upgrade_medium.jpg);
+    }
+}
+
+/*大屏*/
+@media screen and (min-width: 1070px) {
+    .pic_list .row:nth-child(1){
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/accessories_large.jpg);
+    }
+    .pic_list .row:nth-child(2){
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/ipad_pro_large.jpg);
+    }
+    .pic_list .row:nth-child(3){
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/airpods_large.jpg);
+    }
+    .pic_list .row:nth-child(4){
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-image: url(../images/iphone_upgrade_large.jpg);
+    }
+}
+
+
+
