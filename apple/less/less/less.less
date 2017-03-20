@@ -1,0 +1,102 @@
+@cols:12;
+@num1:1068px;
+@num2:735px;
+*{
+  box-sizing: border-box;
+}
+.container{
+  &-fluid{
+    width:100%;
+    .clear();
+    margin:auto;
+  }
+  &-fluid .row{
+    width:100%;
+    .clear();
+  }
+  &{
+    max-width:735px;
+    .clear();
+    margin:auto;
+  }
+  & .row{
+    width:100%;
+    .clear();
+  }
+}
+.clear(){
+  &{
+    &:before,&:after{
+      content: "";
+      display: none;
+      clear: both;
+    }
+  }
+}
+.for(@type,@i:1) when(@i<=@cols){
+  .container .row .col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float:left;
+    position: relative;
+  }
+  .container .row .col-@{type}-offset-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container .row .col-@{type}-push-@{i}{
+    left:@i/@cols*100%;
+  }
+  .container .row .col-@{type}-pull-@{i}{
+    left:-@i/@cols*100%;
+  }
+
+  .container-fluid .row .col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float:left;
+  }
+
+  .for(@type,@i:@i+1);
+}
+.for(s);
+
+.col-m-hide{
+  display:block;
+}
+.col-l-hide{
+  display:block;
+}
+.col-s-hide{
+  display:none;
+}
+
+@media screen and (min-width:@num2){
+  .container{
+    max-width:@num2;
+  }
+  .for(m);
+  .col-s-hide{
+    display:block;
+  }
+  .col-l-hide{
+    display:block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+
+}
+
+@media screen and (min-width:@num1){
+  .container{
+    max-width:@num1;
+  }
+  .for(l);
+  .col-s-hide{
+    display:block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+}
