@@ -47,15 +47,18 @@ $(function () {
         next=now+1;
         if(next>$(".bannerbox li").length-1){
             next=0;
-            flag1=false;
         }
-        $(".bannerbox li").eq(now).animate({width:"80%",height:"80%"},1500).css("z-index",0);
+        $(".bannerbox li").eq(now).animate({width:"80%",height:"80%"},1500);
         //下一张的变化
         $(".bannerbox li").eq(next).animate({left:0},1500,function(){
             $(".bannerbox li").eq(now).css({left:"100%",width:"100%",height:"100%"});
+            if(next==0){
+                flag1=false;
+            }
             now=next;
-        }).css("z-index",1);
-        currTime=0;
+            currTime=0;
+        }).css("zIndex",1);
+
     }
 
     $(window).blur(function(){
@@ -74,12 +77,12 @@ $(function () {
     //按钮进度
     var t2=setInterval(progress,50);
     function progress() {
-        currTime+=50;
+        currTime+=100;
         var bili=currTime/times;
         if(bili>1){
             bili=1;
         }
-        $(".btnbox li .progress").eq(next).css("width",bili*100+"%");
+        $(".btnbox li .progress").eq(now).css("width",bili*100+"%");
         if(!flag1){
             $(".btnbox li .progress").css("width",0);
             flag1=true;
@@ -91,28 +94,27 @@ $(function () {
         clearInterval(t1);
         clearInterval(t2);
         $(".btnbox li .progress").css("width",0).eq(next).css("width","100%");
-    }
-    $(".btnbox li").click(function () {
-        var index=$(this).index();
-        next=index;
-        stop();
         if(now<next){
-            $(".bannerbox li").eq(now).animate({width:"80%",height:"80%"},1500).css("z-index",0);
+            $(".bannerbox li").eq(now).animate({width:"80%",height:"80%"},1500);
             //下一张的变化
             $(".bannerbox li").eq(next).animate({left:0},1500,function(){
                 $(".bannerbox li").eq(now).css({left:"100%",width:"100%",height:"100%"});
+                if(next==0){
+                    flag1=false;
+                }
                 now=next;
-            }).css("z-index",1);
+                currTime=0;
+            }).css("zIndex",1);
         }else if(now>next){
-            $(".bannerbox li").eq(now).animate({left:"100%"},1500);
-            $(".bannerbox li").eq($(this).index()).css({left:0,width:"80%",height:"80%"});
-            $(".bannerbox li").eq($(this).index()).animate({width:"100%",height:"100%",zIndex:1},1500,function () {
+            $(".bannerbox li").eq(now).animate({left:"100%"},1500).css("z-index",1);
+            $(".bannerbox li").eq(next).css({left:0,width:"80%",height:"80%"}).animate({width:"100%",height:"100%",zIndex:1},1500,function () {
                 now=next;
             });
-        }else if(now==next){
-            $(".bannerbox li").eq(now).css({width:"80%",height:"80%"});
-            $(".bannerbox li").eq(now).animate({width:"100%",height:"100%"});
         }
+    }
+    $(".btnbox li").click(function () {
+        var index=$(this).index(".btnbox li");
+        next=index;
         stop();
     })
     
@@ -121,14 +123,7 @@ $(function () {
         next=now-1;
         if(next<0){
             next=$(".bannerbox li").length-1;
-            flag1=false;
         }
-        $(".bannerbox li").eq(now).css({"z-index":2});
-        $(".bannerbox li").eq(now).animate({left:"100%"},1500);
-        $(".bannerbox li").eq(next).css({left:0,width:"80%",height:"80%","z-index":1});
-        $(".bannerbox li").eq(next).animate({width:"100%",height:"100%",zIndex:1},1500,function () {
-            now=next;
-        });
         stop();
     })
     // 右按钮点击事件
@@ -136,14 +131,7 @@ $(function () {
         next=now+1;
         if(next>$(".bannerbox li").length-1){
             next=0;
-            flag1=false;
         }
-        $(".bannerbox li").eq(now).animate({width:"80%",height:"80%"},1500).css("z-index",0);
-        //下一张的变化
-        $(".bannerbox li").eq(next).animate({left:0},1500,function(){
-            $(".bannerbox li").eq(now).css({left:"100%",width:"100%",height:"100%"});
-            now=next;
-        }).css("z-index",1);
         stop();
     })
 
