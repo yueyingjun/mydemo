@@ -1,0 +1,12 @@
+h1,h2,h3,h4,h5,h6,body,p,ul,li,ol,dl,dt,dd,table,tbody,tr,td,input,hr{
+    margin:0;padding:0;list-style:none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border:0;
+}
+body{
+    font-family: Arial,"Microsoft YaHei";
+}

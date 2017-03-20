@@ -1,0 +1,98 @@
+*{
+  box-sizing: border-box;
+}
+@cols:12;
+@num1:900px;
+@num2:1200px;
+.container{
+  &{
+    width:600px;margin:auto;
+    .clear()
+  }
+  &>.row{
+    width:100%;
+    .clear();
+
+  }
+  &-fluid{
+    width:100%;margin:auto;
+    .clear()
+  }
+  &-fluid>.row{
+    width:100%;
+    .clear();
+  }
+}
+.for(s);
+.col-l-hide{
+  display:block;
+}
+.col-s-hide{
+  display: none;
+}
+.col-m-hide{
+  display: block;
+}
+.clear(){
+  &:before,&:after{
+    content:"";
+    clear:both;
+    display:block;
+  }
+}
+.for(@type,@i:1) when (@i<=@cols){
+  .container>.row>.col-@{type}-@{i}{
+    width:@i/12*100%;
+    float:left;
+  };
+  .container-fluid>.row>.col-@{type}-@{i}{
+    width:@i/12*100%;
+    float:left;
+  }
+  .container>.row>.col-@{type}-offset-@{i}{
+    margin-left:@i/12*100%;
+    float:left;
+  };
+  .container>.row>.col-@{type}-push-@{i}{
+    left:@i/12*100%;position:relative;
+    float:left;
+  };
+  .container>.row>.col-@{type}-pull-@{i}{
+    left:-@i/12*100%;position:relative;
+    float:left;
+  };
+  .for(@type,@i:@i+1)
+}
+@media screen and (min-width:@num1){
+  .container{
+    width:@num2;margin:auto;
+  }
+  .for(m);
+  .col-l-hide{
+    display:block;
+  }
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+}
+@media screen and (min-width:@num2) {
+  .container {
+    width: @num2;
+    margin: auto;
+  }
+  .for(l);
+  .col-s-hide {
+    display: block;
+  }
+
+  .col-m-hide {
+    display: block;
+  }
+
+  .col-l-hide {
+    display: none;
+  }
+}
