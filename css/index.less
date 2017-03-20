@@ -1,0 +1,111 @@
+@cols:12;
+@num1:1024px;
+@num2:765px;
+@num3:600px;
+.container{
+  &-fluid{
+    .clear();
+    margin:auto;
+    width:100%;
+    &-fluid>.row{
+    margin:auto; 
+    width:100%;
+    .clear();
+    }
+  }
+  &{
+    margin:0 auto;
+    width:@num3;
+    .clear();
+  }
+  &>.row{
+    margin:0 auto;
+    width:100%;
+    .clear();
+  }
+}
+
+
+
+.clear(){
+  &{
+    &:before,&:after{   //&指自己
+      content:"";
+      clear:both;
+      display:block;
+    }
+  }
+}
+.com-l-hiden{
+    display:block;
+}
+.col-m-hiden{
+    display: block;
+}
+.col-s-hiden{
+    display: none;
+}
+//小屏
+.for(s);
+//中屏
+@media screen and (min-width: @num2) {
+    .container{
+        width:@num2;
+    }
+   .for(m);
+   .com-l-hiden{
+         display:block;
+    }
+    .col-s-hiden{
+        display: block;
+    }.col-m-hiden{
+        display:none;
+    }
+}
+//大屏
+@media screen and (min-width: @num1) {
+    .container{
+        width:@num1;
+    }
+  .for(l);
+    .com-m-hiden{
+         display:block;
+    }
+    .col-s-hiden{
+        display: block;
+    }.col-l-hiden{
+        display:none;
+    }
+}
+.for(@type,@i:1) when (@i<=@cols){
+  .col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float: left;
+  }
+  .col-push-@{i}{
+      margin-left:@i/@cols*100%;
+  }
+  .col-pull-@{i}{
+      margin-right:-@i/@cols*100%;
+  }
+.col-offsetl-@{i}{
+      position: relative;
+      left:@i/@cols*100%;
+}
+.col-offsetr-@{i}{
+      position: relative;
+      left:-@i/@cols*100%;
+}
+  .for(@type,@i:@i+1);
+}
+//栅格化结束
+//字体开始
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align:center;
+}
