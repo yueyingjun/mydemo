@@ -1,0 +1,20 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,input{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: "微软雅黑","楷体";
+	font-size: 14px;
+	min-width: 345px; 
+	background-color:#000 ;
+}
+input{
+	border: none;
+}
