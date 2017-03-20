@@ -162,6 +162,27 @@ $(function () {
         })
 
     }
+    lunbo();
+    window.focus=function(){
+        stop();
+    }
+    window.blur=function(){
+        lunbo();
+    }
 
-    lunbo();    // 运行轮播
+    // 底部
+    function footer() {
+        var flag=true;
+        $(".footer_nav").bind("click",function () {
+            $(this).find(".footer_nav_wrap").slideToggle();
+            if(flag){
+                $(this).find("dt").addClass("change");
+                flag=false;
+            }else{
+                $(this).find("dt").removeClass("change");
+                flag=true;
+            }
+        })
+    }
+   footer();
 })
