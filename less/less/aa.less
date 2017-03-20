@@ -1,0 +1,204 @@
+//@color:blue;
+//.one{
+//  width: 200px;height: 200px;
+//  border: 1px solid @color;
+//  text-align: center;line-height: 200px;
+//  color:@color;
+//  font-size: 20px;
+//  border-image-source: url(../border.png); //图片来源
+//  border-image-width: 30px;  //排列宽度
+//  border-image-slice: 33.3333333%;  //截取比例
+//  border-image-repeat: round;
+//  border-image-outset: 10px; //向外扩展
+//  //.raduis(10px,20px,30px,40px);
+//  //box-shadow: 10px 10px 15px #000;
+//  //.shadow(inset);
+//}
+//
+////函数
+//.raduis(@mun1,@mun2,@mun3,@mun4){
+//  -moz-border-radius: @arguments;
+//  -webkit-border-radius: @arguments;
+//  -o-border-radius: @arguments;
+//  -ms-border-radius: @arguments;
+//  border-radius: @arguments;
+//}
+//
+////条件
+//.shadow(@type,@x:10px,@y:10px,@a:50px,@b:red) when(@type=inset){
+//  -webkit-box-shadow: @x @y @a @b @type;
+//  -moz-box-shadow: @x @y @a @b @type;
+//  -ms-box-shadow: @x @y @a @b @type;
+//  -o-box-shadow: @x @y @a @b @type;
+//  box-shadow: @x @y @a @b @type;
+//}
+//.shadow(@type,@x:10px,@y:10px,@a:50px,@b:red) when(@type=outset){
+//  -webkit-box-shadow: @x @y @a @b;
+//  -moz-box-shadow: @x @y @a @b;
+//  -ms-box-shadow: @x @y @a @b;
+//  -o-box-shadow: @x @y @a @b;
+//  box-shadow: @x @y @a @b;
+//}
+//
+////循环
+//.for(@i:1) when(@i<=12){
+//    div@{i}{
+//      width:@i/12*100%;
+//    }
+//  .for(@i:@i+1);
+//}
+//.for();
+//
+////混合型语法
+//
+//.one:before,.one:after{
+//  content:"";
+//  cleat:both;
+//  display:block;
+//}
+
+@cole:12;
+@num1:1200px;
+@num2:800px;
+*{
+  box-sizing: border-box;
+}
+.row .container div{
+  border: 1px solid red;
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: auto;
+  //position: relative;
+}
+
+//小屏
+.container{
+  &-fluid{
+    width: 100%;margin: auto;
+    .clear();
+  }
+  &-fluid .row{
+    width: 100%;
+     .clear();
+   }
+  &{
+    //width: 1200px;
+    margin: auto;
+    .clear();
+  }
+  & .row{
+    width:100%;
+    .clear();
+  }
+
+
+}
+
+.for(s);
+
+.col-l-hide{
+  display: block;
+}
+.col-m-hide{
+  display: none;
+}
+.col-s-hide{
+  display: none;
+}
+
+//中屏
+@media screen and (min-width: @num2){
+  .for(m);
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+
+}
+//大屏
+@media screen and (min-width: @num1){
+  .for(l);
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+}
+
+
+.for(@type,@i:1) when(@i<=@cole){
+  .container .row .col-@{type}-@{i}{
+    width: @i/@cole*100%;
+    float: left;
+  }
+  .container .row .col-@{type}-offset-@{i}{
+    margin-left: @i/@cole*100%;
+    float: left;
+  }
+  .container .row .col-@{type}-push-@{i}{
+    position: relative;
+    left: @i/@cole*100%;
+    //float: left;
+  }
+  .container .row .col-@{type}-pull-@{i}{
+    position: relative;
+    left: -@i/@cole*100%;
+    //float: left;
+  }
+  .container-fluid .row .col-@{type}-@{i}{
+    width: @i/@cole*100%;
+    float: left;
+  }
+  .for(@type,@i+1);
+}
+
+.clear{
+  &{
+    &:before,&:after{
+      content:"";
+      clear: both;
+      display: block;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
