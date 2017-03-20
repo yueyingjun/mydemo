@@ -246,7 +246,7 @@ a{
 }
 @media screen and (min-width: 1080px){
     .banner ul.img li:nth-child(1){
-        background-image: url(../images/iphone.jpg);
+        background-image: url(../images/iPhone.jpg);
     }
     .banner ul.img li:nth-child(2){
         background-image: url(../images/watch_alt_large.jpg);
