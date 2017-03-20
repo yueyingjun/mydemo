@@ -143,7 +143,7 @@ $(function(){
     // 底部开始
     var flag2=true;
     $(".smallfooter .hyx-xuangou").click(function(){
-        alert(indexnum)
+//         alert(indexnum)
         if(flag2){
             $(this).find($(".add")).css({transform:"rotate(45deg)"});
             $(this).parents("li").find($(".footermune")).slideToggle(1000);
