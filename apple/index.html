@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>苹果官网</title>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<style>
+    /*广告开始*/
+     .add{
+        width:100%;height:40px;
+        border-top:1px solid #c2c2c2;
+        background: #444444;
+    }
+    .add .inner{
+        max-width:980px;
+        height:100%;
+        position:relative;
+        margin:auto;
+    }
+    .add .inner span{
+        position:absolute;right:0;
+        line-height:40px;
+        font-size:12px;
+        color:#a8a8aa;
+    }
+    /*banner开始*/
+    /*导航开始*/
+    .nav{
+        width:100%;
+        height:44px;
+        background: #020202;
+    }
+    .small{
+        display:block;
+    }
+    .small{
+        max-width:765px;
+        height:43px;
+        border-top:1px solid #020202;
+        line-height:43px;
+        text-align:center;
+        background: #020202;
+        position:relative;
+    }
+    .small li{
+        width:33.3333333333%;
+        height:100%;
+        float:left;
+    }
+    .small .menu{
+        text-align: left;
+        padding-left:10px;
+    }
+    .small .menu .fuhao{
+        width:22px;
+        height:1px;
+        background: #fff;
+        margin-top:15px;
+    }
+    .small .menu div:nth-child(2){
+        margin-top:8px;
+
+    }
+    .small >li:nth-child(3){
+        text-align: right;
+        padding-right:10px;
+    }
+    .small .hide{
+        width:100%;
+        padding:0 48px;
+        display: none;
+        position:absolute;
+        background: #020202;
+        left:0;
+        top:43px;
+        z-index: 22222;
+    }
+    .small .hide >li{
+        width:100%;
+        height:43px;
+        border-bottom:1px solid #333333;
+    }
+    .small .hide >li>a{
+        color:#fff;
+    }
+    .small .hide >li>a:hover{
+        color:#666;
+    }
+    .large{
+        display: none;
+    }
+    @media screen and (min-width:765px){
+        .large{
+            display:block;
+        }
+        .large{
+            max-width:1000px;
+            padding:0 10px;
+            height:43px;
+            line-height:43px;
+            border-top:1px solid #020202;
+            background:#020202;
+            margin:auto;
+        }
+        .large li{
+            width:11.11111111%;
+            height:100%;
+            text-align: center;
+            float:left;
+        }
+        .large li a{
+            color:#fff;
+        }
+        .small{
+            display:none;
+        }
+
+    }
+    /*导航结束*/
+    .banner{
+        width:100%;
+        height:420px;
+        position:relative;
+        overflow: hidden;
+    }
+    .banner .imgbox{
+        width:100%;
+        height:100%;
+        position:absolute;
+    }
+    .banner .imgbox{
+        width:100%;
+        height:100%;
+    }
+    .banner .imgbox a{
+        display:block;
+        width:100%;
+        height:100%;
+        position:absolute;
+        left:100%;
+        top:0;
+        background-repeat: no-repeat;
+        background-position:center;
+        background-size:contain;
+    }
+    .banner .imgbox a:nth-child(1){
+        left:0;
+        background-color: #F3F3F3;
+        background-image: url(img/watch_alt_large.jpg);
+    }
+    .banner .imgbox a:nth-child(2){
+        background-image: url(img/macbookpro_small.jpg);
+        background-color: #FFFFFF;
+    }
+    .banner .imgbox a:nth-child(3){
+        background-image: url(img/iphone_alt_large.jpg);
+        background-color: #0A0A0A;
+    }
+    .banner .anniubox{
+        width:200px;
+        height:5px;
+        left:0;right:0;margin-left:auto;margin-right:auto;
+        bottom:60px;position:absolute;
+        z-index:1000000;
+    }
+    .banner .anniubox>div{
+        width:30%;
+        margin-right:3%;
+        background: #eee;
+        height:100%;
+        float:left;
+    }
+    .banner .anniubox .first{
+        background: #333;
+    }
+    .banner .anniubox div .progress{
+        width:0;
+        height:100%;
+        background: #808080;
+    }
+    .banner .leftbox,.rightbox{
+        width:20%;
+        height:100%;
+        position:absolute;
+        z-index: 200;
+    }
+    .leftbox{
+        left:0;
+    }
+    .rightbox{
+        right:0;
+    }
+
+    .leftbtn,.rightbtn{
+        width:50px;
+        height:50px;
+        position:absolute;
+        left:0;top:0;right:0;bottom:0;margin:auto;
+        background: #000;
+        color:#eee;
+        border-radius:50%;
+        text-align:center;
+        line-height:50px;
+        opacity: 0.1;
+        cursor:pointer;
+        font-size:30px;
+        display:none;
+
+    }
+    .leftbox:hover .leftbtn{
+        display:block;
+        transition:all 1s;
+    }
+    .rightbox:hover .rightbtn{
+        display:block;
+        transition:all 1s;
+    }
+    .leftbtn:hover{
+        opacity: 0.5;
+        transition:all 1s;
+    }
+    .rightbtn:hover{
+        opacity: 0.5;
+        transition:opacity 1s ease;
+    }
+    @media screen and (min-width: 735px){
+        .banner{
+            height:500px;
+        }
+        .banner .imgbox a:nth-child(2){
+            background-image: url(img/macbookpro_xlarge.jpg);
+            background-color: #FFFFFF;
+
+        }
+    }
+    /*banner结束*/
+    /*广告结束*/
+    /*推荐开始*/
+    .hot{
+        width:100%;
+    }
+    .hot .row div{
+        height:200px;
+        width:25%;
+        float:left;
+    }
+    .hot .row div:nth-child(1){
+        background-image:url(img/accessories_xlarge.jpg);
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+
+    }
+    .hot .row div:nth-child(2){
+        background-image:url(img/airpods_xlarge.jpg);
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+
+    }
+    .hot .row div:nth-child(3){
+        background-image:url(img/ipad_pro_xlarge.jpg);
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+
+    }
+    .hot .row div:nth-child(4){
+        background-image:url(img/iphone_upgrade_xlarge.jpg);
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+
+    }
+    /*推荐结束*/
+    /*warn开始*/
+    .warn{
+        max-width:980px;
+        height:49px;
+        margin:auto;
+        border-bottom:1px solid #d6d6d6;
+        line-height:49px;
+        font-size:12px;
+        color:#888888;
+    }
+    /*warn结束*/
+    /*服务开始*/
+    .s_small{
+        display: block;
+    }
+    .s_small{
+        max-width:689px;
+        height:auto;
+        padding:0 16px;
+        background: #F2F2F2;
+        padding-top:20px;
+        margin:auto;
+    }
+    .s_small >div,.s_small p{
+        width:572px;
+        height:auto;
+        border-bottom:1px solid #D6D6D6;
+        line-height:40px;
+        text-align: left;
+        font-size:12px;
+        margin:auto;
+        position:relative;
+    }
+    .s_small >div a{
+        color:#333333;
+    }
+    .s_small >div span{
+        color:#333333;
+        position:absolute;
+        right:0;
+    }
+    .s_small .hidden{
+        height:auto;
+        line-height:20px;
+        padding:6px 14px;
+        display: none;
+    }
+    .s_small .hidden a{
+       display: block;
+        height:20px;
+        color:gray;
+    }
+    .s_large{
+        display:none;
+    }
+    @media screen and (min-width:689px){
+        .s_small{
+            display: none;
+        }
+        .s_large{
+            display:block;
+        }
+        .service{
+            max-width:980px;
+
+        /*这里要注意必须有前缀max，因为比上面订的689要大，不写的话就出出现滚动条*/
+            height:302px;
+            border-top:1px solid #d6d6d6;
+            border-bottom:1px solid #d6d6d6;
+            margin:auto;
+            font-size:11px;
+            padding-top:11px;
+            position:relative;
+        }
+        .service div[class*=column]{
+            width:20%;
+            height:auto;
+            float:left;
+        }
+        .service div[class*=column] dt,.service div[class*=column] dd{
+            line-height:22px;
+        }
+        .service div[class*=column] dt{
+            color:#333333;
+        }
+        .service div[class*=column] dd a{
+            color:#555555;
+        }
+        .service p{
+            height:30px;
+            line-height:30px;
+            color:#888888;
+            position:absolute;
+            bottom:0;
+        }
+    }
+
+    /*服务结束*/
+    /*foot开始*/
+    .foot{
+        max-width:980px;
+        margin:auto;
+        height:auto;
+        padding-top:4px;
+        font-size:12px;
+        color:#999999;
+        position:relative;
+    }
+    .foot .foot_nav{
+        overflow: hidden;
+    }
+    .foot .foot_nav,.copyright{
+        line-height:24px;
+    }
+    .foot .foot_nav p,.foot .foot_nav ul,.foot .foot_nav .china{
+        float:left;
+    }
+    .foot a{
+        color:#555555;
+    }
+    .foot .foot_nav ul{
+        margin-left:22px;
+    }
+    .foot .foot_nav ul li{
+        float:left;
+        padding:0 12px;
+    }
+    .foot .foot_nav .china{
+        position:absolute;
+        right:0;
+    }
+    .foot .foot_nav .china img{
+        vertical-align: middle;
+    }
+    .foot .foot_nav .china img span{
+        vertical-align: middle;
+    }
+    /*foot结束*/
+</style>
+<body>
+    <!--导航 765
+    推荐  1070 735
+    -->
+    <!--广告开始-->
+    <div class="add">
+        <div class="inner">
+            <span>&lt;广告&gt;</span>
+        </div>
+    </div>
+    <!--广告结束-->
+    <!--导航开始-->
+    <div class="nav">
+        <ul class="small">
+            <li class="menu">
+                    <div class="fuhao"></div>
+                    <div class="fuhao"></div>
+                    <ul class="hide">
+                        <li><a href="">Mac</a></li>
+                        <li><a href="">ipad</a></li>
+                        <li><a href="">iphone</a></li>
+                        <li><a href="">Watch</a></li>
+                        <li><a href="">Music</a></li>
+                        <li><a href="">技术支持</a></li>
+                        <li><a href=""  class="iconfont icon-gouwudai">搜索apple.com</a></li>
+                    </ul>
+            </li>
+            <li class="iconfont icon-pingguo1
+      "></li>
+            <li class="iconfont icon-gouwudai
+
+      "></li>
+        </ul>
+        <ul class="large">
+            <li><a href=""><i class="iconfont icon-pingguo1
+      "></i></a></li>
+            <li><a href="">Mac</a></li>
+            <li><a href="">ipad</a></li>
+            <li><a href="">iphone</a></li>
+            <li><a href="">Watch</a></li>
+            <li><a href="">Music</a></li>
+            <li><a href="">技术支持</a></li>
+            <li><a href=""><i class="iconfont icon-sou
+      "></i></a></li>
+            <li><a href=""><i class="iconfont icon-gouwudai
+
+      "></i></a></li>
+        </ul>
+    </div>
+
+    <!--导航结束-->
+    <!--轮播开始-->
+    <div class="banner">
+        <div class="imgbox">
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+        <div class="anniubox">
+            <div  class="first">
+                <div class="progress"></div>
+            </div>
+            <div>
+                <div class="progress"></div>
+
+            </div>
+            <div>
+                <div class="progress"></div>
+
+            </div>
+        </div>
+        <div class="leftbox">
+            <div class="leftbtn">&lt;</div>
+        </div>
+        <div class="rightbox">
+            <div class="rightbtn">&gt;</div>
+        </div>
+    </div>
+    <!--轮播结束-->
+    <!--推荐开始-->
+    <div class="container-fluid hot">
+        <div class="row">
+            <div class="col-l-3 col-m-6 col-s-12"></div>
+            <div class="col-l-3 col-m-6 col-s-12"></div>
+            <div class="col-l-3 col-m-6 col-s-12"></div>
+            <div class="col-l-3 col-m-6 col-s-12"></div>
+        </div>
+    </div>
+    <!--推荐结束-->
+    <!--warn开始-->
+    <div class="warn">双镜头摄像头仅于 iPhone 7 Plus 提供。亮黑色外观仅于 128GB 及以上存储容量的机型提供。</div>
+    <!--warn结束-->
+    <!--服务开始-->
+    <!--小屏-->
+    <div class="service s_small">
+        <div>
+            <a href="">选购及了解</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dd><a href="">Mac</a></dd>
+                <dd><a href="">ipad</a></dd>
+                <dd><a href="">iPhone</a></dd>
+                <dd><a href="">Watch</a></dd>
+                <dd><a href="">Music</a></dd>
+                <dd><a href="">itunes</a></dd>
+                <dd><a href="">ipod</a></dd>
+                <dd><a href="">配件</a></dd>
+                <dd><a href="">App store充值卡</a></dd>
+            </dl>
+        </div>
+        <div>
+            <a href="">Apple store</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dd><a href="">查找零售店</a></dd>
+                <dd><a href="">天才吧</a></dd>
+                <dd><a href="">讲座和学习</a></dd>
+                <dd><a href="">青少年活动</a></dd>
+                <dd><a href="">Apple store App</a></dd>
+                <dd><a href="">翻新和优惠</a></dd>
+                <dd><a href="">分期付款</a></dd>
+                <dd><a href="">重复使用和循环利用</a></dd>
+                <dd><a href="">订单状态</a></dd>
+                <dd><a href="">选购帮助</a></dd>
+            </dl>
+        </div>
+        <div>
+            <a href="">教育应用</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dd><a href="">Apple与教育</a></dd>
+                <dd><a href="">高校师生选购</a></dd>
+            </dl>
+        </div>
+        <div>
+            <a href="">关于 Apple</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dt>关于 Apple</dt>
+                <dd><a href="">Apple 资讯</a></dd>
+                <dd><a href="">工作机会</a></dd>
+                <dd><a href="">媒体资讯</a></dd>
+                <dd><a href="">活动</a></dd>
+                <dd><a href="">联系 Apple</a></dd>
+
+            </dl>
+        </div>
+        <div>
+            <a href="">商务应用</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dt>账户</dt>
+                <dd><a href="">管理你的Aopple Id</a></dd>
+                <dd><a href="">Store账户</a> </dd>
+                <dd><a href="">iCloud.com</a></dd>
+            </dl>
+        </div>
+        <div>
+            <a href="">账户</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dd><a href="">管理你的Aopple Id</a></dd>
+                <dd><a href="">Store账户</a> </dd>
+                <dd><a href="">iCloud.com</a></dd>
+            </dl>
+        </div>
+        <div>
+            <a href="">价值观</a>
+            <span>+</span>
+            <dl class="hidden">
+                <dd><a href="">辅助功能</a></dd>
+                <dd><a href="">环境责任</a></dd>
+                <dd><a href="">隐私</a></dd>
+                <dd><a href="">供应商责任</a></dd>
+            </dl>
+        </div>
+        <p>更多选购方式：前往 <a href="">Apple Store 零售店</a>，
+            致电 400-666-8800 或查找在你附近的<a href="">授权经销商</a>。</p>
+    </div>
+    <!--大屏-->
+    <div class="service s_large">
+        <div class="column1">
+            <dl>
+                <dt>选购及了解</dt>
+                <dd><a href="">Mac</a></dd>
+                <dd><a href="">ipad</a></dd>
+                <dd><a href="">iPhone</a></dd>
+                <dd><a href="">Watch</a></dd>
+                <dd><a href="">Music</a></dd>
+                <dd><a href="">itunes</a></dd>
+                <dd><a href="">ipod</a></dd>
+                <dd><a href="">配件</a></dd>
+                <dd><a href="">App store充值卡</a></dd>
+            </dl>
+        </div>
+        <div class="column2">
+            <dl>
+                <dt>Apple store</dt>
+                <dd><a href="">查找零售店</a></dd>
+                <dd><a href="">天才吧</a></dd>
+                <dd><a href="">讲座和学习</a></dd>
+                <dd><a href="">青少年活动</a></dd>
+                <dd><a href="">Apple store App</a></dd>
+                <dd><a href="">翻新和优惠</a></dd>
+                <dd><a href="">分期付款</a></dd>
+                <dd><a href="">重复使用和循环利用</a></dd>
+                <dd><a href="">订单状态</a></dd>
+                <dd><a href="">选购帮助</a></dd>
+            </dl>
+        </div>
+        <div class="column3">
+            <dl>
+                <dt>教育应用</dt>
+                <dd><a href="">Apple与教育</a></dd>
+                <dd><a href="">高校师生选购</a></dd>
+            </dl>
+            <dl>
+                <dt>商务应用</dt>
+                <dd><a href="">Apple与商务</a></dd>
+                <dd><a href="">商务选购</a></dd>
+            </dl>
+        </div>
+        <div class="column4">
+            <dl>
+                <dt>账户</dt>
+                <dd><a href="">管理你的Aopple Id</a></dd>
+                <dd><a href="">Store账户</a> </dd>
+                <dd><a href="">iCloud.com</a></dd>
+            </dl>
+            <dl>
+                <dt>Apple 价值观</dt>
+                <dd><a href="">辅助功能</a></dd>
+                <dd><a href="">环境责任</a></dd>
+                <dd><a href="">隐私</a></dd>
+                <dd><a href="">供应商责任</a></dd>
+
+            </dl>
+        </div>
+        <div class="column5">
+            <dl>
+                <dt>关于 Apple</dt>
+                <dd><a href="">Apple 资讯</a></dd>
+                <dd><a href="">工作机会</a></dd>
+                <dd><a href="">媒体资讯</a></dd>
+                <dd><a href="">活动</a></dd>
+                <dd><a href="">联系 Apple</a></dd>
+
+            </dl>
+        </div>
+        <p>更多选购方式：前往 <a href="">Apple Store 零售店</a>，
+            致电 400-666-8800 或查找在你附近的<a href="">授权经销商</a>。</p>
+    </div>
+    <!--服务结束-->
+    <!--foot开始-->
+    <div class="foot">
+        <div class="foot_nav">
+            <p>Copyright © 2017 Apple Inc.保留所有权利。</p>
+            <ul>
+                <li><a href="">隐私政策</a></li>
+                <li>|</li>
+                <li><a href="">使用条款</a></li>
+                <li>|</li>
+                <li><a href="">销售政策</a></li>
+                <li>|</li>
+                <li><a href="">法律信息</a></li>
+                <li>|</li>
+                <li><a href="">网站地图</a></li>
+            </ul>
+            <div class="china">
+                <img src="img/16.png" alt=""> 中国
+            </div>
+        </div>
+        <div class="copyright">
+            <a href="">京公安网安备 11010502008968 京ICP备10214630</a>
+        </div>
+    </div>
+    <!--foot结束-->
+</body>
+</html>
