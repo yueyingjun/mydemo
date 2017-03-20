@@ -1,0 +1,132 @@
+.icon-apple,.icon-search,.icon-s{
+    font-family: "iconfont";
+    color: #fff;
+    font-size: 20px;
+}
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ul,li{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+*{
+    box-sizing: border-box;
+}
+.b_img_box{
+    width:100%;
+    height:540px;
+    position:absolute;
+    top:0;
+}
+.banner_box{
+    width:100%;
+    height:540px;
+    overflow: hidden;
+    position:relative;
+    top:-1px;
+}
+.banner_img{
+    width:100%;
+    height:100%;
+    position:relative;
+    top:0;
+}
+
+
+.img_box1{
+    left:0;
+    background: #0a0a0a;
+//z-index: 100;
+}
+.img_box2{
+    left:100%;
+    background: #f2f2f2;
+}
+.img_box3{
+    left:100%;
+    background: #fff;
+}
+
+.content{
+    height: 33%;
+    width: 100%;
+    padding-top: 32px;
+    box-sizing: border-box;
+    margin-top:16px;
+}
+.content h1,h2{
+    text-align: center;
+}
+.p1{
+    font-size: 32px;
+    line-height: 1.5625;
+    font-weight: 500;
+    letter-spacing: .011em;
+}
+.p2{
+    margin-top:-30px;
+    font-size:40px;
+}
+.h1s{
+    color:#fff;
+}
+.h2s{
+    color:#fff;
+}
+.btn{
+    width:200px;height:2px;
+    position: absolute;
+    left:0;bottom:50px;
+    right:0;
+    margin:auto;z-index:999;
+}
+.btn .fixed{
+    width:25%;height:100%;
+    margin-left:3%;float:left;
+    background:rgba(128,128,128,0.2);
+    position: relative;z-index:999;
+}
+.btn .fixed .progress{
+    position: absolute;
+    width:0%;height:100%;
+    z-index:999;
+    background: #808080;
+}
+
+.left,.right{
+    width:64px;
+    height:64px;
+    background:rgba(0,0,0,0.1);
+    position: absolute;
+    top:255px;
+    color:#fff;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 30px;
+    z-index: 200;
+    opacity:0;
+}
+.left{
+    left:50px;
+}
+.right{
+    right:50px;
+}
+.banner_box:hover .left{
+    opacity: 1;
+}
+.banner_box:hover .right{
+    opacity:1;
+}
+.banner_box{
+    margin-top: 47px;
+}

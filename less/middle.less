@@ -1,0 +1,87 @@
+@import "less";
+/*banner*/
+@media screen and (min-width: 735px) {
+    .b_img_back11{
+        width:100%;
+        height:540px;
+        text-align: center;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/11.jpg);
+    }
+    .b_img_back22{
+        width:100%;
+        height:540px;
+        text-align: center;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/22.jpg);
+    }
+    .b_img_back33{
+        width:auto;
+        height:540px;
+        top: 33%;
+        bottom: -10%;
+        left: 0;
+        right: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        text-align: center;
+        background-size: auto 100%;
+        background-size: contain;
+        background-image: url(../img/33s.jpg);
+    }
+
+}
+/*main*/
+@media screen and (min-width: 704px){
+    .for(m);
+    .container-fluid{
+        max-width:@num3;//1049
+        min-width: 704px;
+        margin:auto;
+    }
+    .col-l-hide{
+        display: block;
+    }
+    .col-s-hide{
+        display: block;
+    }
+    .col-m-hide{
+        display: none;
+    }
+    .row div{
+        border:1px solid #fff;
+        height:200px;
+        background-position: center center;
+    }
+    .row div a{
+        width:100%;
+        height:100%;
+        display: block;
+        background-size: 640px 200px;
+        background-repeat: no-repeat;
+    }
+    .row div:nth-child(1) a{
+        background-image:  url("http://images.apple.com/cn/home/images/promos/accessories_medium.jpg");;
+    }
+    .row div:nth-child(2) a{
+        background-image:url("http://images.apple.com/cn/home/images/promos/ipad_pro_medium.jpg");
+    }
+    .row div:nth-child(3) a{
+        background-image: url("http://images.apple.com/cn/home/images/promos/airpods_medium.jpg");
+    }
+    .row div:nth-child(4) a{
+        background-image: url("http://images.apple.com/cn/home/images/promos/iphone_upgrade_medium.jpg");
+    }
+    .main{
+        height:401px;
+        border-bottom: 2px solid #fff;
+    }
+    .row{
+        position: relative;
+        z-index: 1;
+    }
+}

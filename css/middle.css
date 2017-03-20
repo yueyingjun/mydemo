@@ -1,0 +1,342 @@
+/*
+1. 流式
+2. 固定
+*/
+.container {
+  width: 704px;
+  margin: auto;
+}
+.container-fluid {
+  width: 100%;
+  margin: auto;
+}
+.container-fluid:before,
+.container-fluid:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+.container-fluid .row {
+  width: 100%;
+}
+.container-fluid .row:before,
+.container-fluid .row:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+.container .row {
+  width: 100%;
+}
+.container .row:before,
+.container .row:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+/*banner*/
+@media screen and (min-width: 735px) {
+  .b_img_back11 {
+    width: 100%;
+    height: 540px;
+    text-align: center;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/11.jpg);
+  }
+  .b_img_back22 {
+    width: 100%;
+    height: 540px;
+    text-align: center;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/22.jpg);
+  }
+  .b_img_back33 {
+    width: auto;
+    height: 540px;
+    top: 33%;
+    bottom: -10%;
+    left: 0;
+    right: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: auto 100%;
+    background-size: contain;
+    background-image: url(../img/33s.jpg);
+  }
+}
+/*main*/
+@media screen and (min-width: 704px) {
+  .container > .row > .col-m-1 {
+    width: 8.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .container > .row > .col-m-push-1 {
+    left: 8.33333333%;
+  }
+  .container > .row > .col-m-pull-1 {
+    left: -8.33333333%;
+  }
+  .container-fluid > .row > .col-m-1 {
+    width: 8.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-2 {
+    width: 16.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .container > .row > .col-m-push-2 {
+    left: 16.66666667%;
+  }
+  .container > .row > .col-m-pull-2 {
+    left: -16.66666667%;
+  }
+  .container-fluid > .row > .col-m-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-3 {
+    width: 25%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-3 {
+    margin-left: 25%;
+  }
+  .container > .row > .col-m-push-3 {
+    left: 25%;
+  }
+  .container > .row > .col-m-pull-3 {
+    left: -25%;
+  }
+  .container-fluid > .row > .col-m-3 {
+    width: 25%;
+    float: left;
+  }
+  .container > .row > .col-m-4 {
+    width: 33.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .container > .row > .col-m-push-4 {
+    left: 33.33333333%;
+  }
+  .container > .row > .col-m-pull-4 {
+    left: -33.33333333%;
+  }
+  .container-fluid > .row > .col-m-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-5 {
+    width: 41.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .container > .row > .col-m-push-5 {
+    left: 41.66666667%;
+  }
+  .container > .row > .col-m-pull-5 {
+    left: -41.66666667%;
+  }
+  .container-fluid > .row > .col-m-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-6 {
+    width: 50%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-6 {
+    margin-left: 50%;
+  }
+  .container > .row > .col-m-push-6 {
+    left: 50%;
+  }
+  .container > .row > .col-m-pull-6 {
+    left: -50%;
+  }
+  .container-fluid > .row > .col-m-6 {
+    width: 50%;
+    float: left;
+  }
+  .container > .row > .col-m-7 {
+    width: 58.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .container > .row > .col-m-push-7 {
+    left: 58.33333333%;
+  }
+  .container > .row > .col-m-pull-7 {
+    left: -58.33333333%;
+  }
+  .container-fluid > .row > .col-m-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-8 {
+    width: 66.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .container > .row > .col-m-push-8 {
+    left: 66.66666667%;
+  }
+  .container > .row > .col-m-pull-8 {
+    left: -66.66666667%;
+  }
+  .container-fluid > .row > .col-m-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-9 {
+    width: 75%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-9 {
+    margin-left: 75%;
+  }
+  .container > .row > .col-m-push-9 {
+    left: 75%;
+  }
+  .container > .row > .col-m-pull-9 {
+    left: -75%;
+  }
+  .container-fluid > .row > .col-m-9 {
+    width: 75%;
+    float: left;
+  }
+  .container > .row > .col-m-10 {
+    width: 83.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .container > .row > .col-m-push-10 {
+    left: 83.33333333%;
+  }
+  .container > .row > .col-m-pull-10 {
+    left: -83.33333333%;
+  }
+  .container-fluid > .row > .col-m-10 {
+    width: 83.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-11 {
+    width: 91.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .container > .row > .col-m-push-11 {
+    left: 91.66666667%;
+  }
+  .container > .row > .col-m-pull-11 {
+    left: -91.66666667%;
+  }
+  .container-fluid > .row > .col-m-11 {
+    width: 91.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-12 {
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-m-offset-12 {
+    margin-left: 100%;
+  }
+  .container > .row > .col-m-push-12 {
+    left: 100%;
+  }
+  .container > .row > .col-m-pull-12 {
+    left: -100%;
+  }
+  .container-fluid > .row > .col-m-12 {
+    width: 100%;
+    float: left;
+  }
+  .container-fluid {
+    max-width: 1049px;
+    min-width: 704px;
+    margin: auto;
+  }
+  .col-l-hide {
+    display: block;
+  }
+  .col-s-hide {
+    display: block;
+  }
+  .col-m-hide {
+    display: none;
+  }
+  .row div {
+    border: 1px solid #fff;
+    height: 200px;
+    background-position: center center;
+  }
+  .row div a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: 640px 200px;
+    background-repeat: no-repeat;
+  }
+  .row div:nth-child(1) a {
+    background-image: url("http://images.apple.com/cn/home/images/promos/accessories_medium.jpg");
+  }
+  .row div:nth-child(2) a {
+    background-image: url("http://images.apple.com/cn/home/images/promos/ipad_pro_medium.jpg");
+  }
+  .row div:nth-child(3) a {
+    background-image: url("http://images.apple.com/cn/home/images/promos/airpods_medium.jpg");
+  }
+  .row div:nth-child(4) a {
+    background-image: url("http://images.apple.com/cn/home/images/promos/iphone_upgrade_medium.jpg");
+  }
+  .main {
+    height: 401px;
+    border-bottom: 2px solid #fff;
+  }
+  .row {
+    position: relative;
+    z-index: 1;
+  }
+}

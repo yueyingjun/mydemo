@@ -1,0 +1,523 @@
+/*
+1. 流式
+2. 固定
+*/
+.container {
+  width: 704px;
+  margin: auto;
+}
+.container-fluid {
+  width: 100%;
+  margin: auto;
+}
+.container-fluid:before,
+.container-fluid:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+.container-fluid .row {
+  width: 100%;
+}
+.container-fluid .row:before,
+.container-fluid .row:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+.container .row {
+  width: 100%;
+}
+.container .row:before,
+.container .row:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+@media screen and (min-width: 765px) {
+  .top_small {
+    display: none;
+  }
+  .top_large {
+    display: block;
+    min-width: 765px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 17px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    text-align: center;
+  }
+  .top_center {
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1024px;
+    padding: 0 22px;
+    position: relative;
+    z-index: 2;
+  }
+  .top_center ul {
+    margin: 0 -10px;
+    width: auto;
+    height: 44px;
+  }
+  .top_center ul li {
+    float: left;
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    z-index: 1;
+    vertical-align: top;
+    width: 11.1111%;
+    line-height: 44px;
+  }
+  .top_center ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+/*banner*/
+@media screen and (min-width: 1349px) {
+  .b_img_back1 {
+    width: 100%;
+    height: 540px;
+    text-align: center;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(http://images.apple.com/cn/home/images/gallery/iphone_alt_large.jpg);
+  }
+  .b_img_back2 {
+    width: 100%;
+    height: 540px;
+    text-align: center;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(http://images.apple.com/v/home/dd/images/gallery/watch_alt_large.jpg);
+  }
+  .b_img_back3 {
+    width: auto;
+    height: 400px;
+    top: 33%;
+    bottom: -10%;
+    left: 0;
+    right: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: auto 100%;
+    background-size: contain;
+    background-image: url(../img/31.jpg);
+    margin-top: 140px;
+  }
+  .p1 {
+    text-align: center;
+  }
+}
+/*main*/
+@media screen and (min-width: 1049px) {
+  .container > .row > .col-l-1 {
+    width: 8.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .container > .row > .col-l-push-1 {
+    left: 8.33333333%;
+  }
+  .container > .row > .col-l-pull-1 {
+    left: -8.33333333%;
+  }
+  .container-fluid > .row > .col-l-1 {
+    width: 8.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-2 {
+    width: 16.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .container > .row > .col-l-push-2 {
+    left: 16.66666667%;
+  }
+  .container > .row > .col-l-pull-2 {
+    left: -16.66666667%;
+  }
+  .container-fluid > .row > .col-l-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-3 {
+    width: 25%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-3 {
+    margin-left: 25%;
+  }
+  .container > .row > .col-l-push-3 {
+    left: 25%;
+  }
+  .container > .row > .col-l-pull-3 {
+    left: -25%;
+  }
+  .container-fluid > .row > .col-l-3 {
+    width: 25%;
+    float: left;
+  }
+  .container > .row > .col-l-4 {
+    width: 33.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .container > .row > .col-l-push-4 {
+    left: 33.33333333%;
+  }
+  .container > .row > .col-l-pull-4 {
+    left: -33.33333333%;
+  }
+  .container-fluid > .row > .col-l-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-5 {
+    width: 41.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .container > .row > .col-l-push-5 {
+    left: 41.66666667%;
+  }
+  .container > .row > .col-l-pull-5 {
+    left: -41.66666667%;
+  }
+  .container-fluid > .row > .col-l-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-6 {
+    width: 50%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-6 {
+    margin-left: 50%;
+  }
+  .container > .row > .col-l-push-6 {
+    left: 50%;
+  }
+  .container > .row > .col-l-pull-6 {
+    left: -50%;
+  }
+  .container-fluid > .row > .col-l-6 {
+    width: 50%;
+    float: left;
+  }
+  .container > .row > .col-l-7 {
+    width: 58.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .container > .row > .col-l-push-7 {
+    left: 58.33333333%;
+  }
+  .container > .row > .col-l-pull-7 {
+    left: -58.33333333%;
+  }
+  .container-fluid > .row > .col-l-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-8 {
+    width: 66.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .container > .row > .col-l-push-8 {
+    left: 66.66666667%;
+  }
+  .container > .row > .col-l-pull-8 {
+    left: -66.66666667%;
+  }
+  .container-fluid > .row > .col-l-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-9 {
+    width: 75%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-9 {
+    margin-left: 75%;
+  }
+  .container > .row > .col-l-push-9 {
+    left: 75%;
+  }
+  .container > .row > .col-l-pull-9 {
+    left: -75%;
+  }
+  .container-fluid > .row > .col-l-9 {
+    width: 75%;
+    float: left;
+  }
+  .container > .row > .col-l-10 {
+    width: 83.33333333%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .container > .row > .col-l-push-10 {
+    left: 83.33333333%;
+  }
+  .container > .row > .col-l-pull-10 {
+    left: -83.33333333%;
+  }
+  .container-fluid > .row > .col-l-10 {
+    width: 83.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-11 {
+    width: 91.66666667%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .container > .row > .col-l-push-11 {
+    left: 91.66666667%;
+  }
+  .container > .row > .col-l-pull-11 {
+    left: -91.66666667%;
+  }
+  .container-fluid > .row > .col-l-11 {
+    width: 91.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-12 {
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+  .container > .row > .col-l-offset-12 {
+    margin-left: 100%;
+  }
+  .container > .row > .col-l-push-12 {
+    left: 100%;
+  }
+  .container > .row > .col-l-pull-12 {
+    left: -100%;
+  }
+  .container-fluid > .row > .col-l-12 {
+    width: 100%;
+    float: left;
+  }
+  .container-fluid {
+    max-width: 1349px;
+    min-width: 1049px;
+    margin: auto;
+  }
+  .col-m-hide {
+    display: block;
+  }
+  .col-s-hide {
+    display: block;
+  }
+  .col-l-hide {
+    display: none;
+  }
+  .row div {
+    border: 1px solid #fff;
+    height: 200px;
+    background-position: center center;
+  }
+  .row div a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: 360px 200px;
+    background-repeat: no-repeat;
+  }
+  .row div:nth-child(1) a {
+    background-image: url("../img/accessories_large.jpg");
+  }
+  .row div:nth-child(2) a {
+    background-image: url("../img/ipad_pro_large.jpg");
+  }
+  .row div:nth-child(3) a {
+    background-image: url("../img/airpods_large.jpg");
+  }
+  .row div:nth-child(4) a {
+    background-image: url("../img/iphone_upgrade_large.jpg");
+  }
+  .main {
+    height: 200px;
+    border-bottom: 2px solid #fff;
+  }
+  .row {
+    position: relative;
+    z-index: 1;
+  }
+}
+/*底部*/
+@media screen and (min-width: 750px) {
+  .foot_large {
+    display: block;
+    min-width: 750px;
+    max-width: 1349px;
+    height: 426px;
+    background-color: #f2f2f2;
+  }
+  .footer {
+    margin: 0 auto;
+    padding: 0 22px;
+    max-width: 980px;
+  }
+  footer {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  div.list li {
+    display: block;
+  }
+  div.list ul {
+    display: block;
+    border-bottom: none;
+  }
+  div.iphone7 {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-bottom: 1px solid #D6D6D6;
+    font-size: 12px;
+    color: #888;
+    margin: 0 auto;
+  }
+  div.list {
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-top: 15px;
+  }
+  div.list h5 {
+    font-size: 10px;
+    font-weight: 700;
+  }
+  div.list ul li a {
+    color: #555;
+    font-size: 10px;
+    font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+  div.list ul li a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  div.list ul li {
+    margin-bottom: 5px;
+  }
+  .foot span a {
+    color: #0070c9;
+  }
+  .foot span a:hover {
+    text-decoration: underline;
+  }
+  div.list h5 {
+    color: #333;
+    margin-bottom: 6px;
+  }
+  div.list h5 ~ h5 {
+    margin-top: 16px;
+  }
+  div.list li {
+    font-size: 10px;
+  }
+  div.list h5 span:last-child {
+    display: none;
+  }
+  div.foot {
+    width: 100%;
+    height: 24px;
+    margin: 0 auto;
+    border-bottom: 1px solid #D6D6D6;
+    font-size: 10px;
+    margin-top: 30px;
+    color: #888;
+  }
+  div.foot-sencond {
+    width: 100%;
+    height: 24px;
+    margin: 0 auto;
+    font-size: 10px;
+    color: #888;
+    margin-top: 8px;
+  }
+  .sec_left {
+    float: left;
+    height: 100%;
+  }
+  .zuo {
+    float: left;
+    margin-right: 20px;
+  }
+  .you {
+    float: left;
+    margin-top: 0;
+  }
+  .sec_right {
+    float: right;
+    height: 100%;
+    margin-top: 0;
+  }
+  #p {
+    width: 100%;
+    height: 24px;
+    color: #888;
+    font-size: 10px;
+    margin: 0 auto;
+    display: block;
+  }
+  div.sec_left p {
+    margin-top: 8px;
+  }
+  div.sec_left a {
+    color: #333;
+    margin: 0 5px;
+  }
+  div.sec_left img {
+    vertical-align: middle;
+    float: right;
+  }
+}
