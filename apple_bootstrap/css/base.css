@@ -1,0 +1,26 @@
+.main{
+	/*width:1200px;*/
+	list-style: none;
+	margin:0 auto;
+}
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,input,i,em,form,b,s{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+i,em,b,s{
+	font-style: normal;
+}
+/*低版本中img属性里有1px的边框。*/
+img{
+ border:none;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	font-family: "微软雅黑","楷体";
+}

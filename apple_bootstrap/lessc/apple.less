@@ -1,0 +1,276 @@
+@cols:12;
+.container{
+  &-fluid{
+    width:100%;
+    .clear();
+    margin:auto;
+  }
+  &-fluid .row{
+    width: 100%;
+    .clear();
+  }
+  &{
+    width:100%;
+    .clear();
+    margin:auto;
+  }
+  & .row{
+    width:100%;
+    .clear();
+  }
+
+}
+
+/*导航栏*/
+.small_header{
+  display: none;
+}
+.nav_list{
+  display: block;
+}
+@media only screen and (max-width:1044px){
+
+  nav{
+    min-width: 320px;
+  }
+}
+@media only screen and (max-width: 767px){
+  nav{
+    max-height:none;
+    //height: 100%;
+  }
+  .ac_content{
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .small_header{
+    display: block;
+  }
+  .nav_list{
+    position: absolute;
+    z-index: 2;
+    top: 44px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 48px;
+    height:auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+    visibility: hidden;
+    padding-top: 1px;
+  }
+  .nav_list .ac_apple,.nav_list .ac_bag{
+    display: none;
+  }
+  .nav_list .ac_menu{
+    height: 43px;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    opacity: 0;
+    pointer-events: auto;
+    webkit-transform: scale(1.1) translateY(-24px);
+    -ms-transform: scale(1.1) translateY(-24px);
+    //transform: scale(1.1) translateY(-24px);
+    webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.35s ease-out;
+    transition: opacity 0.35s ease-out, -webkit-transform 0.35s ease-out;
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out, -webkit-transform 0.35s ease-out;
+  }
+
+  .ac_menu:nth-child(2){
+    margin-top: 20px;
+    -webkit-transition-delay: 350ms,350ms;
+    transition-delay: 350ms,350ms;
+  }
+  .ac_menu:nth-child(3){
+    -webkit-transition-delay: 300ms,300ms;
+    transition-delay: 300ms,300ms;
+  }
+  .ac_menu:nth-child(4){
+     -webkit-transition-delay: 250ms,250ms;
+     transition-delay: 250ms,250ms;
+   }
+  .ac_menu:nth-child(5){
+    -webkit-transition-delay: 200ms,200ms;
+    transition-delay: 200ms,200ms;
+  }
+  .ac_menu:nth-child(6){
+    -webkit-transition-delay: 150ms,150ms;
+    transition-delay: 150ms,150ms;
+  }
+  .ac_menu:nth-child(7){
+    webkit-transition-delay: 100ms,100ms;
+    transition-delay: 100ms,100ms;
+  }
+  .ac_menu:nth-child(8){
+    webkit-transition-delay: 50ms,50ms;
+    transition-delay: 50ms,50ms;
+    margin-bottom: 30px;
+  }
+}
+
+//banner部分
+/*中屏*/
+@media screen and(max-width: 1068px){
+  .gallery-item{
+    .img_iphone7{
+      background-repeat:no-repeat;
+      background-image: url(../img/iphone_medium.jpg);
+    }
+    .img_watch{
+      background-repeat:no-repeat;
+      background-image: url(../img/watch_alt_medium.jpg);
+    }
+    .img_mac{
+      background-repeat:no-repeat;
+      background-image: url(../img/macbookpro_medium.jpg);
+    }
+  }
+}
+/*小屏*/
+@media screen and(max-width: 735px){
+  .gallery-item{
+    .img_iphone7{
+      background-repeat: no-repeat;
+      background-image: url(../img/iphone_alt_small.jpg);
+    }
+    .img_mac{
+      background-repeat: no-repeat;
+      background-image: url(../img/macbookpro_small.jpg);
+    }
+  }
+}
+
+
+
+
+/*4幅图片*/
+.for(l); //大屏的时候
+.for(@type,@i:1) when (@i<=@cols) {
+  .container > .row .col-@{type}-@{i} {
+    width: @i/@cols*100%;
+    float: left;
+  }
+  .for(@type,@i:@i+1);
+}
+
+/*小于1068px 中屏*/
+@media only screen and (max-width: 1068px){
+  .for(m);
+  .prom-position{
+    .promo-accessories{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/accessories_m.jpg);
+    }
+    .promo-ipad{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/ipad_pro_m.jpg);
+    }
+    .promo-airpods{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/airpods_m.jpg);
+    }
+    .promo-iphone{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/iphone_upgrade_m.jpg);
+    }
+  }
+}
+/*小于735px 小屏*/
+@media only screen and (max-width: 735px){
+  .for(s);
+  .prom-position{
+    .promo-accessories{
+      background-size: 736px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/accessories_small.jpg);
+    }
+    .promo-ipad{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/ipad_pro_small.jpg);
+    }
+    .promo-airpods{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/airpods_small.jpg);
+    }
+    .promo-iphone{
+      background-size: 640px 200px;
+      background-repeat: no-repeat;
+      background-image: url(../img/iphone_upgrade_small.jpg);
+    }
+  }
+}
+
+
+//底部
+@media screen and (max-width: 1044px){
+  .footer_wrap{
+    min-width: 320px;
+  }
+  
+}
+@media only screen and (max-width: 767px){
+  .footer_content{
+    padding:0 15px;
+  }
+  .footer_nav_box{
+    border-bottom: 1px solid #d6d6d6;
+    width: 100%;
+    cursor: pointer;
+  }
+  .footer_nav_box_one{
+    border-bottom: 1px solid #d6d6d6;
+  }
+  .footer_nav_box_two{
+    padding-top: 0;
+  }
+  .footer_nav_wrap{
+    display: none;
+    padding-top: 5px;
+    padding-bottom: 16px;
+  }
+  .footer_nav_wrap{
+    .footer_nav_item a{
+      padding: 6px 14px;
+    }
+  }
+  .footer_nav dt{
+    padding: 10px 0;
+    margin-bottom: 0px;
+    color: #555;
+    font-weight:normal;
+  }
+  .footer_nav dt:after{
+    content: "+";
+    float: right;
+    font-size: 14px;
+    transition: transform .3s ease;
+  }
+  .footer_nav dt.change:after{
+    transform: rotate(45deg) scale(1.08);
+  }
+
+}
+
+
+
+
+.clear(){
+  &::before,&::after{
+    content: "";
+    display:none;
+    clear: both;
+  }
+}
