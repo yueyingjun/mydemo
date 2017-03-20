@@ -1,0 +1,87 @@
+//@cols:9;
+//@num1:1000px;
+//@num2:700px;
+//@num2:400px;
+//.container{
+//  &_fluid{
+//    .clear();
+//    width:100%;margin:auto;
+//  }
+//  &_fluid>.row{
+//    width:100%;
+//    .clear();
+//  }
+//  &{
+//    .clear();
+//    width:600px;margin:auto;
+//  }
+//  &>.row{
+//    width:100%;
+//    .clear();
+//  }
+//}
+////清除浮动
+//.clear(){
+//  &{
+//    &:before,&:after{
+//      content:"";
+//      clear:both;
+//      display: block;
+//    }
+//  }
+//}
+///*小屏*/
+//.for(s);
+//.col_m_hide{display: none;}
+//.col_l_hide {display:none;}
+//.col_s_hide{display: none;}
+//
+///*中屏*/
+//@media screen and (min-width: @num2) {
+//  .container{
+//    width:@num2;
+//  }
+//  .for(m);
+//  .col_s_hide {display:block;}
+//  .col_m_hide {display:none;}
+//  .col_l_hide {display:none;}
+//
+//}
+///*大屏*/
+//@media screen and (min-width: @num1) {
+//  .container{
+//    width:@num1;
+//  }
+//  .for(l);
+//  .col_s_hide {display:block;}
+//  .col_m_hide {display:block;}
+//  .col_l_hide {display:none;}
+//}
+//.for(@type,@i:1) when (@i<=@cols){
+//  .container>.row>.col_@{type}_@{i}{
+//    width:@i/@cols*100%;
+//    float: left;
+//    line-height: 44px;
+//    text-align: center;
+//    font-size: 14px;
+//    color: #fff;
+//    font-weight: bold;
+//    cursor: pointer;
+//  }
+//  .container_fluid>.row>.col_@{type}_@{i}{
+//    width:@i/@cols*100%;
+//    float: left;
+//    line-height: 44px;
+//    text-align: center;
+//    font-size: 14px;
+//    color: #fff;
+//    font-weight: bold;
+//    cursor: pointer;
+//  }
+//  .for(@type,@i:@i+1);
+//}
+//
+//
+//
+//
+//
