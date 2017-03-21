@@ -1,0 +1,23 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,input{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+	text-decoration: none;
+	border: 0;
+}
+/*兼容性问题，低版本浏览器会有一像素边框。*/
+img{
+	border: 0px;
+}
+/*a链接去下划线*/
+a{
+	text-decoration: none;
+}
+/*字体回退系统，逐个尝试直到适用*/
+body{
+	font-family: "微软雅黑","楷体";
+	/*overflow-x:hidden*/
+
+}
+
+	
