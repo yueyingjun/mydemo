@@ -1,12 +1,12 @@
 $(function(){
-    var flag=true;	
+    var flag1=true;	
 	window.onresize=function() {
         var clientH = $(window).height();
         var clientW = $(window).width();
         $(".menu").css("height", clientH);
         if(clientW>765){
             $(".menu").css("display","none");
-            flag=true;
+            flag1=true;
             $(".btn span").eq(0).css({
                 transform:"translate(0,0px) rotate(0deg)"
             })
@@ -17,14 +17,14 @@ $(function(){
     }
     window.onresize();
 	$(".btn").click(function(){
-		if(flag){
+		if(flag1){
 		$(".btn span").eq(0).css({transform:"translate(0,0px) rotate(45deg)"});
 		$(".btn span").eq(1).css({transform:"translate(0,-5px) rotate(135deg)"});
-		flag=false;
+		flag1=false;
 		}else{
 		$(".btn span").eq(0).css({transform:"translate(0,0px) rotate(0deg)"});
 		$(".btn span").eq(1).css({transform:"translate(0,0px) rotate(0deg)"});	
-		flag=true;
+		flag1=true;
 		}
 		$(".menu").slideToggle(1000);					
 	})
