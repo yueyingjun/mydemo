@@ -1,0 +1,412 @@
+body{padding: 0;margin: 0;list-style: none}
+ul,li,div{padding: 0;margin: 0;list-style: none}
+a{text-decoration: none;color: #fff}
+/*字体图片*/
+@font-face {
+    font-family: "iconfont";
+    src: url('../font/iconfont.eot?t=1489721335621'); /* IE9*/
+    src: url('../font/iconfont.eot?t=1489721335621#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff?t=1489721335621') format('woff'), /* chrome, firefox */
+    url('../font/iconfont.ttf?t=1489721335621') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1489721335621#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apple:before { content: "\e61a"; }
+
+.icon-bag:before { content: "\e64b"; }
+
+.icon-search:before { content: "\e600"; }
+
+/*topnav*/
+.small{display: block}
+.large{display: none}
+@media screen and (min-width: 765px){
+    .small{display: none}
+    .large{display: block}
+}
+
+.large{
+    min-width: 765px;height: 44px;
+    background: #000;
+}
+.large .con{
+    max-width: 1024px;height: 100%;
+    margin: auto;
+}
+.large .con a{
+    width: 11.111%;height: 44px;text-align: center;
+    line-height: 44px;font-size: 16px;
+    display: block;float: left;
+}
+.large .con a:hover{color: #eee}
+
+.small{
+    max-width: 765px;height: 44px;
+    background: #000;
+    position: relative;
+}
+.small .con{
+    width: 100%;height: 100%;
+    line-height: 44px;text-align: center;
+}
+.small .con .small-one{
+    width: 33.333%;height: 100%;
+    float: left;text-align: center;
+}
+.small .con .small-one:nth-child(3){
+    text-align: right;
+}
+.small .con .small-one .btn{
+    width: 20px;height: 20px;
+    margin-top: 17px;
+}
+.small .con .small-one .btn .line1{
+    width: 100%;height: 1px;background: #fff;
+    margin-top: 5px;
+}
+.small .con .small-one .btn .line2{
+    width: 100%;height: 1px;background: #fff;
+    margin-top: 8px;
+}
+.small .menu{
+    width: 100%;background:#000;
+    position: absolute;left: 0;top: 30px;
+    display: none;
+    z-index: 100;
+}
+.small .menu li{
+    width: 80%;margin: 10px auto;
+    border-bottom: 1px solid #eeeeee;
+}
+.small .menu li a:hover{color: #ccc}
+
+
+
+/*banner*/
+.banner{
+    position: relative;
+    height:420px;
+    overflow: hidden;
+}
+.banner .picbox{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top:0;
+}
+.banner .picbox li{
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    left: 100%;
+    background-position: center;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+}
+.banner .picbox li:nth-child(1){
+    z-index: 1;
+    left: 0;
+    background-image: url(../images/gallery/iphone_alt_small.jpg);
+    background-color: #0A0A0A;
+}
+.banner .picbox li:nth-child(2){
+    background-image: url(../images/gallery/watch_alt_portrait_small.jpg);
+    background-color: #F3F3F3;
+}
+.banner .picbox li:nth-child(3){
+    background-image: url(../images/gallery/macbookpro_portrait_small.jpg);
+    background-color: #FFFFFF;
+}
+@media screen and (min-width: 765px){
+    .banner{height: 520px}
+    .banner .picbox li:nth-child(1){
+        z-index: 1;
+        left: 0;
+        background-image: url(../images/gallery/iphone_alt_medium.jpg);
+        background-color: #0A0A0A;
+    }
+    .banner .picbox li:nth-child(2){
+        background-image: url(../images/gallery/watch_alt_medium.jpg);
+        background-color: #F3F3F3;
+    }
+    .banner .picbox li:nth-child(3){
+        background-image: url(../images/gallery/macbookpro_medium.jpg);
+        background-color: #FFFFFF;
+    }
+}
+/*大屏*/
+@media screen and (min-width: 1000px){
+    .banner{height: 520px}
+    .banner .picbox li:nth-child(1){
+        z-index: 1;
+        left: 0;
+        background-image: url(../images/gallery/iphone_alt_large.jpg);
+        background-color: #0A0A0A;
+    }
+    .banner .picbox li:nth-child(2){
+        background-image: url(../images/gallery/watch_alt_large.jpg);
+        background-color: #F3F3F3;
+    }
+    .banner .picbox li:nth-child(3){
+        background-image: url(../images/gallery/macbookpro_large.jpg);
+        background-color: #FFFFFF;
+    }
+}
+.banner ul.btns{
+    z-index: 3;
+    width: 180px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:30px;
+    margin: auto;
+}
+.banner ul.btns li{
+    width: 50px;
+    height: 2px;
+    float: left;
+    margin-right: 10px;
+    background-color:#eee;
+    cursor: pointer;
+}
+.banner ul.btns li .progress{
+    background: #848484;
+    height:100%;
+    width: 0;
+}
+.banner ul.leftBtn,.banner ul.rightBtn{
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+.banner ul.leftBtn li,.banner ul.rightBtn li{
+    width: 70px;height: 70px;
+    background: #848484;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    border-radius: 50%;
+    color: #111;
+    line-height: 70px;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0;
+    cursor: pointer;
+    font-weight: 100;
+}
+.banner ul.leftBtn li{
+    left: 20px;
+}
+.banner ul.rightBtn li{
+    right: 20px;
+}
+
+.banner ul.leftBtn:hover li{
+    opacity: 0.7;
+}
+.banner ul.rightBtn:hover li{
+    opacity: 0.7;
+}
+.banner ul.leftBtn{
+    left: 0;
+}
+.banner ul.rightBtn{
+    right: 0;
+}
+.clearbox{
+    clear: both;
+}
+/*main*/
+.piclist{
+    border-top:2px solid #fff;
+    border-bottom:2px solid #fff;
+}
+/*footer*/
+/*下面*/
+/*小屏*/
+.small1{
+    max-width: 760px;
+    height: auto;
+    background: #f2f2f2;
+}
+.change{
+    width: 90%;
+    margin: auto;
+}
+.small1{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.smal{
+    max-width: 765px;
+    /*margin-left:20px;*/
+    margin:0 auto;
+}
+.smal>ul{
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 17px 0 11px;
+
+}
+.smal>ul>li{
+    text-align: left;
+    font-size: 11px;
+    color: #888;
+
+}
+.change{
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom:10px;
+    background-color:#f2f2f2;
+    color: #333;
+    font-size: 12px;
+    line-height: 18px;
+    border-bottom:1px solid #d6d6d6 ;
+    text-align: left;
+}
+.small1 .change .btn1{
+    width: 10px;
+    height: 10px;
+    float: right;
+    color: #333;
+    margin-top: -15px;
+}
+.xiala{
+    width: 100%;
+    display: none;
+}
+.xiala li{
+    padding-top: 10px;
+}
+.xiala li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.xiala li a{
+    color: #000;
+}
+.large1{
+    display: none;
+}
+@media screen and (min-width: 760px){
+    .smal{
+        min-width: 760px;
+        height: auto;
+        margin:0 auto;
+    }
+    .smal>ul{
+        max-width: 950px;
+        margin: auto;
+        border-bottom: 1px solid #d6d6d6;
+        padding: 17px 0 11px;
+
+    }
+    .smal>ul>li{
+
+        text-align: left;
+        font-size: 11px;
+        color: #888;
+
+    }
+    .large1{
+        min-width: 760px;
+        height: auto;
+        overflow: hidden;
+        background: #f2f2f2;
+    }
+    .large11{
+        max-width: 950px;
+        padding-top: 20px;
+        margin: auto;
+    }
+    .large11 ul{
+        width: 20%;
+        height: auto;
+        float: left;
+    }
+    .large11 li{
+        line-height: 22px;
+    }
+    .large11 ul li a{
+        color: #555;
+        text-decoration: none;
+        font-size: 11px;
+        text-align: left;
+    }
+    .large1{
+        display: block;
+    }
+    .small1{
+        display: none;
+    }
+
+}
+/*底部结束*/
+/*版权开始*/
+
+footer{
+    background: #f2f2f2;
+    padding-top:30px;
+    font-size: 12px;
+    color: #ccc;
+    line-height: 30px;
+}
+.banquan{
+    max-width: 980px;
+    height: auto;
+    margin:0 auto;
+    overflow: hidden;
+    /*background: pink;*/
+}
+.banquan .xuangou{
+    line-height: 30px;
+    border-bottom:1px solid #ccc;
+}
+.banquan .xuangou>a{
+    color: #0000FF;
+    padding: 5px;
+}
+.quanli{
+    width:100%;
+    height: auto;
+    overflow: hidden;
+}
+.qleft{
+    float:left;
+}
+.quanli a,.quanli span{
+    margin-left:5px;
+    margin-right: 5px;
+}
+.quanli a{
+    color:#555555;
+}
+.qright{
+    float: right;
+}
+.qright span{
+    color:#555555;
+}
+.police{
+    width: 100%;
+    height: 20px;
+    /*background: pink;*/
+}
+/*版权结束*/
