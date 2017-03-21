@@ -18,30 +18,29 @@ $(function(){
     window.onresize();
 
 
-    $(".small .con .btn").click(function(){
-            if(flag){
-                $(".line1").css({
-                    transform:"translate(0,5px) rotate(45deg)"
-                })
-                $(".line2").css({
-                    transform:"translate(0,-3px) rotate(-45deg)"
-                })
+    $(".small .row .btn").click(function(){
+        if(flag){
+            $(".line1").css({
+                transform:"translate(0,5px) rotate(45deg)"
+            })
+            $(".line2").css({
+                transform:"translate(0,-3px) rotate(-45deg)"
+            })
 
-                flag=false
+            flag=false
 
-            }else{
-                $(".line1").css({
-                    transform:"translate(0,0px) rotate(0deg)"
-                })
-                $(".line2").css({
-                    transform:"translate(0,0px) rotate(0deg)"
-                })
+        }else{
+            $(".line1").css({
+                transform:"translate(0,0px) rotate(0deg)"
+            })
+            $(".line2").css({
+                transform:"translate(0,0px) rotate(0deg)"
+            })
 
-                flag=true
-            }
+            flag=true
+        }
 
-
-            $(".menu").slideToggle(1000);
+        $(".menu").slideToggle(1000);
     })
 
 // 轮播图
@@ -63,27 +62,27 @@ $(function(){
 
         }
 
-       //当前这一张
+        //当前这一张
 
         $(".wheel-list").eq(currentNum).animate({
             width:"80%",height:"80%"
         })
 
-       //下一张的运动方式
-       $(".wheel-list").eq(nextNum).animate({
-           left:0
-       },function(){
-           $(".wheel-list").eq(currentNum).css({
-               width:"100%",height:"100%",left:"100%"
-           })
-           if(nextNum==0){
-               flag=false;
-           }
+        //下一张的运动方式
+        $(".wheel-list").eq(nextNum).animate({
+            left:0
+        },function(){
+            $(".wheel-list").eq(currentNum).css({
+                width:"100%",height:"100%",left:"100%"
+            })
+            if(nextNum==0){
+                flag=false;
+            }
 
-           currentNum=nextNum;
-           currentTime=0;
+            currentNum=nextNum;
+            currentTime=0;
 
-       }).css("zIndex",1);
+        }).css("zIndex",1);
 
     }
 
@@ -147,7 +146,7 @@ $(function(){
             }).css("zIndex",1);
         }else{
 
-           $(".wheel-list").eq(currentNum).animate({left:"100%"}).css("z-index",1);
+            $(".wheel-list").eq(currentNum).animate({left:"100%"}).css("z-index",1);
 
             $(".wheel-list").eq(nextNum).css({
                 left:0,top:0,width:"80%",height:"80%"
@@ -177,6 +176,20 @@ $(function(){
         stop();
     })
 
-
+    // 底部
+    function footer() {
+        var flag=true;
+        $(".footer_nav").bind("click",function () {
+            $(this).find(".footer_nav_wrap").slideToggle();
+            if(flag){
+                $(this).find("dt").addClass("change");
+                flag=false;
+            }else{
+                $(this).find("dt").removeClass("change");
+                flag=true;
+            }
+        })
+    }
+    footer();
 
 })
