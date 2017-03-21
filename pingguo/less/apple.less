@@ -1,0 +1,163 @@
+@cols:12;
+@num1:1070px;
+@num2:750px;
+.container{
+    &-fluid{
+        width:100%;
+    }
+    &-fluid>.row{
+        width:100%;
+        .clear();
+    }
+    &{
+        width:100%;
+        .clear();
+    }
+    &>.row{
+        width:100%;
+        .clear();
+    }
+}
+.prome{
+    height:200px;
+    display: block;
+    background: url("../img/accessories_small.jpg")no-repeat center;
+}
+.bor{
+    border-bottom: 2px solid #fff;
+}
+.bor1{
+    border-bottom: 2px solid #fff;
+}
+.bor2{
+    border-bottom: 2px solid #fff;
+}
+.prome1{
+    height:200px;
+    display: block;
+    background: url("../img/ipad_pro_small.jpg")no-repeat center;
+}
+.prome2{
+    height:200px;
+    display: block;
+    background: url("../img/iphone_upgrade_small.jpg")no-repeat center;
+}
+.prome3{
+    height: 200px;
+    display: block;
+    background: url("../img/airpods_small.jpg")no-repeat center;
+}
+.col-m-hide{
+    display: block;
+}
+.col-l-hide{
+    display: block;
+}
+.col-s-hide{
+    display: none;
+}
+.for(s);
+@media screen and (min-width:@num2) {
+    .container{
+        width:@num2;
+    }
+    .col-s-hide{
+        display: block;
+    }
+    .col-l-hide{
+        display: block;
+    }
+    .col-m-hide{
+        display: none;
+    }
+    .prome{
+        background: url("../img/accessories_medium.jpg")no-repeat center;
+    }
+    .prome1{
+        background: url("../img/ipad_pro_medium.jpg")no-repeat center;
+    }
+    .prome2{
+        background: url("../img/iphone_upgrade_medium.jpg")no-repeat center;
+    }
+    .prome3{
+        background: url("../img/airpods_medium.jpg")no-repeat center;
+    }
+    .bor{
+        border-right:2px solid #fff;
+    }
+    .for(m);
+}
+@media screen and (min-width:@num1){
+    .container{
+        width:@num1;
+    }
+    .col-s-hide{
+        display: block;
+    }
+    .col-m-hide{
+        display: block
+    }
+    .col-l-hide{
+        display: none;
+    }
+    .prome{
+        background: url("../img/accessories_large.jpg")no-repeat center;
+    }
+    .prome1{
+        background: url("../img/ipad_pro_large.jpg")no-repeat center;
+    }
+    .prome2{
+        background: url("../img/iphone_upgrade_large.jpg")no-repeat center;
+    }
+    .prome3{
+        background: url("../img/airpods_large.jpg")no-repeat center;
+    }
+    .bor2{
+        border-right:2px solid #ffffff;
+    }
+    .for(l)
+}
+.clear(){
+    &{
+        &:before,&:after{
+            content:"";
+            display: none;
+            clear:both;
+        }
+    }
+}
+.for(@type,@i:1) when(@i<=@cols){
+    //循环出盒子大小占比
+    .container-fluid>.row>.col-@{type}-@{i}{
+        width:@i/@cols*100%;
+        position:relative;
+        float: left;
+    }
+    .container>.row>.col-@{type}-@{i}{
+        width:@i/@cols*100%;
+        position: relative;
+        float: left;
+    }
+    //循环出位移占比
+    .container-fluid>.row>.col-@{type}-offset-@{i}{
+        margin-left:@i/@cols*100%;
+    }
+    .container>.row>.col-@{type}-offset-@{i}{
+        margin-left:@i/@cols*100%;
+    }
+    //循环出左移动占比
+    .container-fluid>.row>.col-@{type}-push-@{i}{
+        left:@i/@cols*100%;
+    }
+    .container>.row>.col-@{type}-push-@{i}{
+        left:@i/@cols*100%;
+    }
+    //循环出右位移占比
+    .container-fluid>.row>.col-@{type}-pull-@{i}{
+        left:-@i/@cols*100%;
+    }
+    .container>.row>.col-@{type}-pull-@{i}{
+        left: -@i/@cols*100%;
+    }
+    .for(@type,@i:@i+1);
+}
