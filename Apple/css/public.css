@@ -421,11 +421,8 @@ h3{
     line-height: 0;
 }
 /*小屏*/
-.footersmall{
-    display: block;
-}
 .footer{
-    display:none;
+    display: block;
 }
 .contentert:before{
     content: '';
@@ -448,7 +445,7 @@ h3{
     overflow: hidden;
     pointer-events: auto;
 }
-.leimu h3{
+.zibox h3{
     margin-bottom: 0;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -467,6 +464,7 @@ h3{
     font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 .jiahao{
+    display: block;
     float: right;
     width: 20px;
     height: 20px;
@@ -474,20 +472,46 @@ h3{
     font-weight: normal;
     margin-top: -2px;
     margin-right: 8px;
-    transition: opacity 500ms ease;
+    text-align: center;
+    line-height: 20px;
+    transition: transform 1s;
 
+}
+.zibox{
+    width: 100%;
+}
+.ziboxxiao{
+    width: 100%;
+}
+.listbox{
+    display: none;
 }
 
 /*大屏*/
 @media screen and (min-width: 765px){
-    .footersmall{
-        display: none;
-    }
     .footer{
         display:block;
     }
     .zibox{
         width: 20%;
+    }
+    .jiahao{
+        display: none;
+    }
+    .dingbu{
+        margin-top: 20px;
+    }
+    .listbox{
+        display: block !important;
+    }
+    .zibox h3{
+        font-weight: bold;
+        color: #000;
+    }
+    .leimu{
+        border-bottom: 1px solid transparent;
+        overflow: hidden;
+        pointer-events: auto;
     }
 }
 .xiangqing{
@@ -523,9 +547,6 @@ h3{
     transition:transform 0.5s linear;
     margin-bottom: 6px;
 }
-/*.btn:hover .line1{*/
-    /*transform: translate(0,6px) rotate(45deg);*/
-/*}*/
 .btn .line2{
     width: 20px;
     height: 1px;
@@ -591,7 +612,7 @@ h3{
         display: none;
     }
     .menu{
-        display: none;
+        display: none !important;
     }
 }
 .smalldaohang{
@@ -620,6 +641,11 @@ h3{
     overflow-y: auto;
     background: #000;
 }
+.menu li{
+    perspective: 800px;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
 .menu li:nth-child(1){
     margin-top: 30px;
 }
@@ -630,10 +656,9 @@ h3{
     line-height: 43px;
 }
 .menu li a{
-    font-family: "微软雅黑";
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
     text-decoration: none;
     font-size: 18px;
-    font-weight: normal;
     color: #fff;
 }
 .menu li a:hover{

@@ -19,7 +19,7 @@ $(document).ready(function() {
         window.onsize();
         $(".btn").click(function () {
             if(flage){
-                $(".menu").slideToggle();
+                $(".menu").slideToggle(1500);
                 $("nav").css("top","-40px");
                 $(".smalldaohang").css("background","#000");
                 $(".add").css("display","none");
@@ -27,15 +27,29 @@ $(document).ready(function() {
                 $(".gouwus").css({"transition":"transform 0.55s 0.25s ease-out"});
                 $(".line1").css({"transform":"translate(0,10px) rotate(45deg)"});
                 $(".line2").css({"transform":"translate(0,3px) rotate(-45deg)"});
+                $()
+                for(var i=0;i<$(".menu li").length;i++){
+                    $(".menu li")[i].style.transition="transform 300ms linear "+0.2*i+"s";
+                    $(".menu li")[i].style.transform="rotateX(0deg)";
+                }
+
+
+
                 flage=false;
             }else{
-                $(".menu").slideToggle();
+                $(".menu").slideToggle(1500);
                 $("nav").css("top","0");
                 $(".add").css("display","block");
                 $(".gouwus").css({"transform":"translateX(0)"});
                 $(".gouwus").css({"transition":"transform 0.55s 0.25s ease-out"});
                 $(".line1").css("transform","translate(0,2px) rotate(0deg)");
                 $(".line2").css("transform","translate(0,2px) rotate(0deg)");
+
+                for(var i=0;i<$(".menu li").length;i++){
+                    $(".menu li")[i].style.transition="transform 300ms linear "+(1.4-0.2*i)+"s";
+                    $(".menu li")[i].style.transform="rotateX(90deg)";
+                }
+
                 flage=true;
             }
         })
@@ -105,7 +119,6 @@ $(document).ready(function() {
                 }
                 currentNum=netNum;
                 currentTime=0;
-
             }).css("zIndex",1);
             }else{
             $(".banner-b a").eq(currentNum).animate({left:"100%"}).css("z-index",1);
@@ -118,33 +131,65 @@ $(document).ready(function() {
     }
     //按钮
     $(".leftBtn").click(function () {
+
         netNum--;
-        if(netNum==-1){
+        if(netNum<0){
             netNum=$(".banner-b a").length-1;
         }
-        stop();
+        $(".dian ul li a").css("width",0).eq(netNum).css("width","100%");
+        clearInterval(t);
+        clearInterval(t1);
+        $(".banner-b a").eq(currentNum).css("z-index",5);
+        $(".banner-b a").eq(currentNum).animate({left:"100%"},1500).css("z-index",5);
+        $(".banner-b a").eq(netNum).css({left:0,width:"80%",height:"80%","z-index":3});
+        $(".banner-b a").eq(netNum).animate({width:"100%",height:"100%"},function(){
+            currentNum=netNum;
+        })
+
     })
     $(".rightBtn").click(function () {
         netNum++;
         if(netNum>$(".banner-b a").length-1){
             netNum=0;
         }
+        $(".dian ul li a").css("width",0).eq(netNum).css("width","100%");
+        clearInterval(t);
+        clearInterval(t1);
+        $(".banner-b a").eq(currentNum).animate({width:"80%",height:"80%"},1500).css("z-index",1);
+        //下一张的运动
 
-        stop();
+        $(".banner-b a").eq(netNum).animate({left:0},1500,function () {
+            $(".banner-b a").eq(currentNum).css({
+                width:"100%",height:"100%",left:"100%"
+            })
+            if(netNum==0){
+                flag=false;
+            }
+            currentNum=netNum;
+            currentTime=0;
+        }).css("zIndex",3);
     })
-    //  底部
-    $(".leimu h3").click(function () {
-        flags=true;
+
+    //底部
+    flags=true;
+    $(".zibox h3").click(function () {
         if(flags){
-            $(".xiangqing").eq($(this).index()).slideToggle();
-            $(".jiahao").eq($(this).index()).css({"transform":"translate(0,0) rotate(45deg)"});
-            flage=false;
+            $(this).find(".jiahao").css({"transform":"rotate(45deg)"});
+            flags=false;
         }else{
-            $(".xiangqing").eq($(this).index()).slideToggle();
-            $(".jiahao").eq($(this).index()).css({"transform":"translate(0,0) rotate(0deg)"});
-            flage=true;
+            $(this).find(".jiahao").css({"transform":"rotate(0deg)"});
+            flags=true;
         }
+        $(".listbox").eq($(".zibox h3").index(this)).slideToggle();
     })
+
+
+
+
+
+
+
+
 })
 
 // window.opcur=function(){
@@ -153,8 +198,7 @@ $(document).ready(function() {
 // window.onfoucs=function () {
 //
 // }
-
-
+// 3d
 
 
 
