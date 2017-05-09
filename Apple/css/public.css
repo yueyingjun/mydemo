@@ -1,0 +1,906 @@
+*{
+    padding: 0;margin: 0;list-style: none;box-sizing: border-box;
+}
+body{
+    background-color: #f2f2f2;
+    border-top: 1px solid transparent;
+    margin-top: -1px;
+    position: relative;
+}
+html{
+    margin-top: 40px !important;
+     background-color: #FFF;
+ }
+/*特殊字*/
+@font-face {
+    font-family: 'iconfont';  /* project id 249623 */
+    src: url('http://at.alicdn.com/t/font_trgww6kpblgi7ldi.eot');
+    src: url('http://at.alicdn.com/t/font_trgww6kpblgi7ldi.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_trgww6kpblgi7ldi.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_trgww6kpblgi7ldi.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_trgww6kpblgi7ldi.svg#iconfont') format('svg');
+}
+
+.add{
+    position: absolute;
+    background: #444;
+    line-height: 1;
+    top: -40px;
+    width: 100%;
+    right: 0;
+    height: 40px;
+    z-index: 9999;
+}
+.addtext{
+    color: #a8a8aa;
+    max-width: 976px;
+    overflow: hidden;
+    text-align: right;
+    line-height: 40px;
+    margin: auto;
+    height: 100%;
+    font-size: 12px;
+}
+nav{
+    height: 48px;
+    max-height: 44px;
+    position: absolute;
+    top:0;left: 0;right: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,0.8);
+    font-size: 17px;
+}
+.boxcenter{
+    margin: 0 auto;
+    padding: 0 22px;
+    max-width: 980px;
+    position: relative;
+    z-index: 2;
+}
+
+.bigdaohang li{
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    z-index: 1;
+    vertical-align: top;
+}
+.photo{
+    font-size: 14px;
+    line-height: 3.14286;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 10px;
+    height: 44px;
+    opacity: 1;
+    background: no-repeat;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-tap-highlight-color: transparent;
+    outline-offset: -7px;
+}
+.logo{
+    background-size: 20px 44px;
+    background-repeat: no-repeat;
+    background-image: url(../img/image_large.svg);
+    background-position: center center;
+    width: 20px;
+}
+.logos{
+    background-size: 20px 44px;
+    background-repeat: no-repeat;
+    background-image: url(../img/image_large.svg);
+    background-position: center center;
+    width: 20px;
+}
+.mac{
+    background-repeat: no-repeat;
+    background-image: url(../img/mvc.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    width: 2em;
+    max-width: 47.6px;
+}
+.ipad{
+    background-repeat: no-repeat;
+    background-image: url(../img/ipad.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    width: 1.92857em;;
+    max-width: 45.9px;
+}
+.iphone{
+    background-repeat: no-repeat;
+    background-image: url(../img/iphone.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    width: 3.14286em;
+    max-width: 74.8px;
+}
+.watch{
+    background-repeat: no-repeat;
+    background-image: url(../img/watch.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    width: 2.85714em;
+    max-width: 68px;
+}
+.music{
+    background-repeat: no-repeat;
+    background-image: url(../img/music.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    width: 2.85714em;
+    max-width: 47.6px;
+}
+.jishu{
+    background-repeat: no-repeat;
+    background-image: url(../img/jszc.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    width: 3.28571em;
+    max-width: 47.6px;
+}
+.sousuo{
+    background-size: 16px 44px;
+    background-repeat: no-repeat;
+    background-image: url(../img/sousuo.svg);
+    background-position: center center;
+    width: 16px;
+}
+.gouwu{
+    background-size: 14px 45px;
+    background-repeat: no-repeat;
+    background-image: url(../img/gouwu.svg);
+    background-position: center center;
+    width: 14px;
+}
+.gouwus{
+    background-size: 14px 45px;
+    background-repeat: no-repeat;
+    background-image: url(../img/gouwu.svg);
+    background-position: center center;
+    width: 14px;
+}
+.bigdaohang{
+    cursor: default;
+    margin: 0 -10px;
+    width: auto;
+    z-index: 100;
+    height: 44px;
+    text-align: justify;
+}
+.bigdaohang:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+.bigdaohang .photo:hover {
+    opacity: .65;
+}
+
+.banner-b a{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    will-change: transform;
+}
+.gallery {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 100%;
+    clear: both;
+}
+.dian{
+    position: absolute;
+    z-index: 1000;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+}
+.dian ul{
+    display: inline-block;
+}
+.dian ul li{
+    list-style: none;
+    margin: 0 5px;
+    width: 50px;
+    height: 2px;
+    float: left;
+    position: relative;
+    background-color: #444;
+    /*opacity: 0.2;*/
+}
+.dian ul li a{
+    top: 0;
+    left: 0;
+    height: 2px;
+    outline: none;
+    position: absolute;
+    padding: 0 0;
+    opacity: 1;
+    transition: opacity 500ms ease;
+    box-sizing: content-box;
+    background-color: grey;
+}
+.tablist{
+    margin: 0;
+    list-style: none;
+}
+.banner-b{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.chanpin{
+    border-bottom: 2px solid #fff;
+    position: relative;
+    z-index: 1;
+}
+.chanpin:before, .chanpin:after {
+    content: ' ';
+    display: table;
+}
+.chanpin ul{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border-bottom: 2px solid #fff;
+}
+.promo{
+    list-style-type: none;
+    box-sizing: border-box;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    float: left;
+    min-height: 2px;
+}
+.footer{
+    font-size: 11px;
+    line-height: 1.45455;
+    font-weight: 400;
+    letter-spacing: .005em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.contentert{
+    margin: 0 auto;
+    padding: 0 22px;
+    max-width: 980px;
+
+}
+.dibu{
+    font-size: 11px;
+    line-height: 1.27273;
+    font-weight: 400;
+    letter-spacing: .005em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+    display: block;
+}
+.dibu:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+.zibox{
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    float: left;
+    min-height: 2px;
+}
+h3{
+    font-size: 11px;
+    line-height: 1.27273;
+    font-weight: 600;
+    letter-spacing: .005em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin: 0;
+    margin-bottom: 6px;
+}
+.zibox ul li{
+    display: block;
+    pointer-events: auto;
+    margin-bottom: 6px;
+}
+.zibox ul li a{
+    color: #555;
+    text-decoration: none;
+}
+.footer-cte{
+    color: #888;
+    padding: 34px 0 21px;
+    font-size: 10px;
+}
+.foot-shop{
+    border-bottom: 1px solid #d6d6d6;
+}
+.foot-locale{
+    float: right;
+    margin-top: 3px;
+    position: relative;
+    top: 3px;
+    z-index: 2;
+    white-space: nowrap;
+}
+.foot-locale span{
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/16.png);
+    padding-right: 5px;
+    background-position: left center;
+    cursor: pointer;
+    float: left;
+    margin-top: -1px;
+}
+.foot-locale a{
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    text-decoration: none;
+    color: #000;
+}
+.foot-locale a:hover{
+    text-decoration: underline;
+}
+.foot-legal{
+    position: relative;
+    top: -3px;
+    z-index: 1;
+}
+.copyss{
+    margin-right: 30px;
+    float: left;
+    margin-top: 6px;
+}
+.linkss{
+    margin-right: 30px;
+    float: left;
+    margin-top: 3px;
+}
+.linkss a{
+    border-right: 1px solid #d6d6d6;
+    margin-right: 10px;
+    padding-right: 12px;
+    display: inline-block;
+    margin-top: 3px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000;
+}
+.linkss a:hover{
+    text-decoration: underline;
+}
+.foot-legal:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+/*小屏*/
+.footer{
+    display: block;
+}
+.contentert:before{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+
+}
+.contentert:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+
+}
+.leimu{
+    border-bottom: 1px solid #d6d6d6;
+    overflow: hidden;
+    pointer-events: auto;
+}
+.zibox h3{
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #f2f2f2;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 2;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.jiahao{
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: -2px;
+    margin-right: 8px;
+    text-align: center;
+    line-height: 20px;
+    transition: transform 1s;
+
+}
+.zibox{
+    width: 100%;
+}
+.ziboxxiao{
+    width: 100%;
+}
+.listbox{
+    display: none;
+}
+
+/*大屏*/
+@media screen and (min-width: 765px){
+    .footer{
+        display:block;
+    }
+    .zibox{
+        width: 20%;
+    }
+    .jiahao{
+        display: none;
+    }
+    .dingbu{
+        margin-top: 20px;
+    }
+    .listbox{
+        display: block !important;
+    }
+    .zibox h3{
+        font-weight: bold;
+        color: #000;
+    }
+    .leimu{
+        border-bottom: 1px solid transparent;
+        overflow: hidden;
+        pointer-events: auto;
+    }
+}
+.xiangqing{
+    display: none;
+}
+.xiangqing li{
+    display: block;
+    pointer-events: auto;
+}
+.xiangqing li a{
+    padding: 6px 14px;
+    display: block;
+    color: #555;
+    text-decoration: none;
+    font-size: 10px;
+    color: #000;
+}
+.xiangqing li a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    float: left;
+}
+.btn .line1{
+    width: 20px;
+    height: 1px;
+    display: inline-block;
+    background: #fff;
+    transition:transform 0.5s linear;
+    margin-bottom: 6px;
+}
+.btn .line2{
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    margin-top: 24px;
+    margin-left: -25px;
+    display: inline-block;
+    transition:transform 0.5s linear;
+}
+.smalldaohang{
+    display: block;
+}
+.smalldaohang li{
+    transition:0.5s linear;
+}
+.bigdaohang{
+    display: none;
+}
+.iconfont{
+    display: block;
+}
+.menu{
+    display: block;
+}
+.logos{
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    display: inline-block;
+    background-size: 20px 44px;
+    background-repeat: no-repeat;
+    background-image: url(../img/image_large.svg);
+    background-position: center center;
+}
+.gouwus{
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    display: block;
+    background-size: 20px 44px;
+    background-repeat: no-repeat;
+    background-image: url(../img/gouwu.svg);
+    background-position: center center;
+    float: right;
+}
+.smalldaohang .logos:hover,.gouwus:hover {
+    opacity: .65;
+}
+@media screen and (min-width: 765px){
+    .smalldaohang{
+        display: none;
+    }
+    .bigdaohang{
+        display:block;
+    }
+    .btn{
+        display: none;
+    }
+    .logos{
+        display: none;
+    }
+    .gouwus{
+        display: none;
+    }
+    .menu{
+        display: none !important;
+    }
+}
+.smalldaohang{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/*小屏导航*/
+.menu{
+    display: none;
+    position: absolute;
+    z-index: 10000;
+    top: 44px;
+    width: 100%;
+    right: 0;
+    padding: 0 48px;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #000;
+}
+.menu li{
+    perspective: 800px;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+.menu li:nth-child(1){
+    margin-top: 30px;
+}
+.menu li{
+    height: 43px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+    line-height: 43px;
+}
+.menu li a{
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+}
+.menu li a:hover{
+    opacity: 0.5;
+}
+.menu li a span {
+    font-family: "iconfont";
+    font-size: 18px;
+    font-weight: normal;
+    color: #fff;
+}
+/*按钮*/
+.leftBthBox{
+    width:20%;
+    height:100%;
+    position: absolute;
+    left:0;top:0;
+    z-index: 999;
+}
+.rightBthBox{
+    width:20%;
+    height:100%;
+    position: absolute;
+    right:0;top:0;
+    z-index: 999;
+}
+.leftBtn,.rightBtn{
+    width:50px;height:50px;
+    background:#ccc;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    left:0;top:0;right:0;bottom: 0;
+    margin:auto;
+    font-size:20px;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.leftBthBox:hover .leftBtn{
+    opacity: 1;
+}
+
+.rightBthBox:hover .rightBtn{
+    opacity: 1;
+}
+/*banner相应*/
+/*小屏*/
+.banner{
+    height: calc(100vh - 200px);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-height: 100%;
+    min-height: 420px;
+}
+.banner-s{
+    width: 100%;
+}
+.banner-s a:nth-child(1){
+    left: 0;
+    background-color: #0a0a0a;
+}
+.imgas1{
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/banner1.jpg);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 110%;
+}
+.banner-s a:nth-child(2){
+    left: 100%;
+    background: #f3f3f3;
+}
+.imgas2{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../img/banner2-s.jpg);
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 110%;
+}
+.banner-s a:nth-child(3){
+    left: 100%;
+    background: #fff;
+}
+.imgas3{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/banner3-s.jpg);
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 110%;
+}
+.banner-b{
+    display: none;
+}
+
+.banner-m{
+    display: none;
+}
+.banner-s{
+    display: block;
+}
+/*中屏*/
+@media screen and (min-width: 735px){
+    .banner{
+        height: calc(100vh - 200px);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        max-height: 100%;
+        min-height: 500px;
+    }
+    .banner-m{
+        width: 735px;
+
+    }
+    .banner-m a:nth-child(1){
+        left: 0;
+        background-color: #0a0a0a;
+    }
+    .imgas1{
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/banner1.jpg);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 110%;
+    }
+    .banner-m a:nth-child(2){
+        left: 100%;
+        background: #f3f3f3;
+    }
+    .imgas2{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../img/banner2-m.jpg);
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 110%;
+    }
+    .banner-m a:nth-child(3){
+        left: 100%;
+        background: #fff;
+    }
+    .imgas3{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/banner3-m.jpg);
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner-b{
+        display: none;
+    }
+    .banner-m{
+        display: none;
+    }
+    .banner-s{
+        display: block;
+    }
+}
+/*大屏*/
+@media screen and (min-width: 1068px){
+    .banner{
+        height: calc(100vh - 200px);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        max-height: 100%;
+        min-height: 540px;
+    }
+    .banner-b{
+        width: 1068px;
+    }
+    .banner-b a:nth-child(1){
+        left: 0;
+        background-color: #0a0a0a;
+    }
+    .imgas1{
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/banner1.jpg);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 110%;
+    }
+    .banner-b a:nth-child(2){
+        left: 100%;
+        background: #f3f3f3;
+    }
+    .imgas2{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../img/banner2.jpg);
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 110%;
+    }
+    .banner-b a:nth-child(3){
+        left: 100%;
+        background: #fff;
+    }
+    .imgas3{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/banner3.jpg);
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 110%;
+    }
+    .banner-s{
+        display: block;
+    }
+    .banner-b{
+        display: block;
+    }
+    .banner-m{
+        display: block;
+    }
+}
